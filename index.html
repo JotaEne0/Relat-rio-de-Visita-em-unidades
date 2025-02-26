@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Visitas</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <style>
+        .collapse-content {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-top: 5px;
+        }
+        .collapse-button {
+            cursor: pointer;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border: none;
+            text-align: left;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Relatório de Visitas</h1>
+        <p>Preencha os dados abaixo para registrar sua visita.</p>
+    </header>
+    <main>
+        <form id="relatorio-form">
+            <fieldset>
+                <legend>1 - Estrutura e Organização</legend>
+                <h3>Identificação da unidade</h3>
+                <button class="collapse-button" onclick="toggleCollapse('checklist-seção1')">Mostrar/Esconder Conteúdo</button>
+                <div id="checklist-seção1" class="collapse-content">
+                    <!-- Adicione as demais perguntas seguindo o mesmo padrão -->
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>2 - Recepção Prontuário, SAME</legend>
+                <h3>Identificação da unidade</h3>
+                <button class="collapse-button" onclick="toggleCollapse('checklist-seção2')">Mostrar/Esconder Conteúdo</button>
+                <div id="checklist-seção2" class="collapse-content">
+                    <!-- Adicione as demais perguntas seguindo o mesmo padrão -->
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Observações</legend>
+                <button class="collapse-button" onclick="toggleCollapse('observacao-container')">Mostrar/Esconder Conteúdo</button>
+                <div id="observacao-container" class="collapse-content">
+                    <label for="observacao">Comentários adicionais:</label>
+                    <textarea id="observacao" name="observacao" placeholder="Adicione suas observações aqui"></textarea>
+                </div>
+            </fieldset>
+            <button type="submit">Salvar</button>
+        </form>
+        <section>
+            <h2>Relatório Gerado</h2>
+            <pre id="relatorio"></pre>
+            <button id="exportar">Exportar Relatório</button>
+        </section>
+    </main>
+    <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+                .then(reg => console.log('Service Worker registrado', reg))
+                .catch(err => console.error('Erro no Service Worker', err));
+        }
+
+        function toggleCollapse(sectionId) {
+            var content = document.getElementById(sectionId);
+            if (content.style.display === "none") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
