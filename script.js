@@ -168,6 +168,30 @@ const perguntas = [
             {id: "plano_contigencia_recpeçãoSAME", texto: "HÁ PLANO DE CONTINGÊNCIA PARA QUEDAS DE ENERGIA E DE INTERNET?"},
             {id: "unidade_atendimento_presencial_recpeçãoSAME", texto: "A UNIDADE REALIZA ATENDIMENTO PREFERENCIAL, DE ACORDO COM A LEGISLAÇÃO VIGENTE?"},
         ]
+    },
+    {
+        secaoId: "checklist-seção3",
+        categoria: "RECEPÇÃO, PRONTUÁRIO, SAME",
+        itens: [
+            {id: "ambiente_limpo_recpeçãoSAME", texto: "HÁ AMBIENTE LIMPO E ORGANIZADO COM REGISTRO DE LIMPEZA ATUALIZADO?"},
+            {id: "lixeira_pedal_recpeçãoSAME", texto: "HÁ LIXEIRA PROVIDA DE PEDAL E TAMPA ADEQUADAMENTE IDENTIFICADA, CONFORME RDC Nº 222/2018?"},
+            {id: "ventilação_recpeçãoSAME", texto: "HÁ VENTILAÇÃO E ILUMINAÇÃO SUFICIENTES E ADEQUADAS?"},
+            {id: "monitoramento_temperatura_recpeçãoSAME", texto: "HÁ MONITORAMENTO DE TEMPERATURA E HUMIDADE (TERMOHIGRÔMETRO)?"},
+            {id: "mobiliario_recpeçãoSAME", texto: "HÁ MOBILIÁRIO EM BOM ESTADO?"},
+            {id: "longarinas_recpeçãoSAME", texto: "HÁ LONGARINAS, POLTRONAS E MACAS COM ESTOFAMENTO LAVÁVEL E ÍNTEGRO?"},
+            {id: "pisos_lavaveis_recpeçãoSAME", texto: "HÁ PISOS E PAREDES COM REVESTIMENTOS QUE SEJAM LAVÁVEIS, OU SEJA, RESISTENTES A LIMPEZA COM ÁGUA E SABÃO?"},
+            {id: "controle_acesso_same_recpeçãoSAME", texto: "HÁ CONTROLE DE ACESSO AO SAME?"},
+            {id: "protuarios_fisicos_recpeçãoSAME", texto: "HÁ PRONTUÁRIOS FÍSICOS ORGANIZADOS ADEQUADAMENTE?"},
+            {id: "prontuarios_estado_recpeçãoSAME", texto: "HÁ PRONTUÁRIOS FÍSICOS EM BOM ESTADO DE CONSERVAÇÃO?"},
+            {id: "registro_prontuario_recpeçãoSAME", texto: "HÁ REGISTRO DE INATIVAÇÃO (ARQUIVO MORTO) DE PRONTUÁRIOS? "},
+            {id: "fluxo_movimentação_recpeçãoSAME", texto: "HÁ FLUXO DE MOVIMENTAÇÃO DE PRONTUÁRIOS (RASTREABILIDADE)? "},
+            {id: "balcao_atendimento_recpeçãoSAME", texto: "BALCÃO DE ATENDIMENTO É ORGANIZADO E LIVRE DE OBJETOS PESSOAIS?"},
+            {id: "cadeiras_atendimento_recpeçãoSAME", texto: "HÁ CADEIRAS NOS BALCÕES PARA ATENDIMENTO AO USUÁRIO? "},
+            {id: "rotina_cadastral_recpeçãoSAME", texto: "HÁ ROTINA DE ATUALIZAÇÃO DE DADOS CADASTRAIS DO USUÁRIO?"},
+            {id: "unidade_agendafacil_recpeçãoSAME", texto: "A UNIDADE DISPONIBILIZA VAGAS PARA O AGENDA FÁCIL?"},
+            {id: "plano_contigencia_recpeçãoSAME", texto: "HÁ PLANO DE CONTINGÊNCIA PARA QUEDAS DE ENERGIA E DE INTERNET?"},
+            {id: "unidade_atendimento_presencial_recpeçãoSAME", texto: "A UNIDADE REALIZA ATENDIMENTO PREFERENCIAL, DE ACORDO COM A LEGISLAÇÃO VIGENTE?"},
+        ]
     }
 ];
 
