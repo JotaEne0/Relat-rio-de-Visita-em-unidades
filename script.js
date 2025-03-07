@@ -147,7 +147,7 @@ const perguntas = [
     },
     {
         secaoId: "checklist-seção2",
-        categoria: "RECEPÇÃO, PRONTUÁRIO, SAME",
+        categoria: "Recepção, Prontuário, Same",
         itens: [
             {id: "ambiente_limpo_recpeçãoSAME", texto: "HÁ AMBIENTE LIMPO E ORGANIZADO COM REGISTRO DE LIMPEZA ATUALIZADO?"},
             {id: "lixeira_pedal_recpeçãoSAME", texto: "HÁ LIXEIRA PROVIDA DE PEDAL E TAMPA ADEQUADAMENTE IDENTIFICADA, CONFORME RDC Nº 222/2018?"},
@@ -171,28 +171,101 @@ const perguntas = [
     },
     {
         secaoId: "checklist-seção3",
-        categoria: "RECEPÇÃO, PRONTUÁRIO, SAME",
+        categoria: "Bens Patrimoniais Móveis",
         itens: [
-            {id: "ambiente_limpo_recpeçãoSAME", texto: "HÁ AMBIENTE LIMPO E ORGANIZADO COM REGISTRO DE LIMPEZA ATUALIZADO?"},
-            {id: "lixeira_pedal_recpeçãoSAME", texto: "HÁ LIXEIRA PROVIDA DE PEDAL E TAMPA ADEQUADAMENTE IDENTIFICADA, CONFORME RDC Nº 222/2018?"},
-            {id: "ventilação_recpeçãoSAME", texto: "HÁ VENTILAÇÃO E ILUMINAÇÃO SUFICIENTES E ADEQUADAS?"},
-            {id: "monitoramento_temperatura_recpeçãoSAME", texto: "HÁ MONITORAMENTO DE TEMPERATURA E HUMIDADE (TERMOHIGRÔMETRO)?"},
-            {id: "mobiliario_recpeçãoSAME", texto: "HÁ MOBILIÁRIO EM BOM ESTADO?"},
-            {id: "longarinas_recpeçãoSAME", texto: "HÁ LONGARINAS, POLTRONAS E MACAS COM ESTOFAMENTO LAVÁVEL E ÍNTEGRO?"},
-            {id: "pisos_lavaveis_recpeçãoSAME", texto: "HÁ PISOS E PAREDES COM REVESTIMENTOS QUE SEJAM LAVÁVEIS, OU SEJA, RESISTENTES A LIMPEZA COM ÁGUA E SABÃO?"},
-            {id: "controle_acesso_same_recpeçãoSAME", texto: "HÁ CONTROLE DE ACESSO AO SAME?"},
-            {id: "protuarios_fisicos_recpeçãoSAME", texto: "HÁ PRONTUÁRIOS FÍSICOS ORGANIZADOS ADEQUADAMENTE?"},
-            {id: "prontuarios_estado_recpeçãoSAME", texto: "HÁ PRONTUÁRIOS FÍSICOS EM BOM ESTADO DE CONSERVAÇÃO?"},
-            {id: "registro_prontuario_recpeçãoSAME", texto: "HÁ REGISTRO DE INATIVAÇÃO (ARQUIVO MORTO) DE PRONTUÁRIOS? "},
-            {id: "fluxo_movimentação_recpeçãoSAME", texto: "HÁ FLUXO DE MOVIMENTAÇÃO DE PRONTUÁRIOS (RASTREABILIDADE)? "},
-            {id: "balcao_atendimento_recpeçãoSAME", texto: "BALCÃO DE ATENDIMENTO É ORGANIZADO E LIVRE DE OBJETOS PESSOAIS?"},
-            {id: "cadeiras_atendimento_recpeçãoSAME", texto: "HÁ CADEIRAS NOS BALCÕES PARA ATENDIMENTO AO USUÁRIO? "},
-            {id: "rotina_cadastral_recpeçãoSAME", texto: "HÁ ROTINA DE ATUALIZAÇÃO DE DADOS CADASTRAIS DO USUÁRIO?"},
-            {id: "unidade_agendafacil_recpeçãoSAME", texto: "A UNIDADE DISPONIBILIZA VAGAS PARA O AGENDA FÁCIL?"},
-            {id: "plano_contigencia_recpeçãoSAME", texto: "HÁ PLANO DE CONTINGÊNCIA PARA QUEDAS DE ENERGIA E DE INTERNET?"},
-            {id: "unidade_atendimento_presencial_recpeçãoSAME", texto: "A UNIDADE REALIZA ATENDIMENTO PREFERENCIAL, DE ACORDO COM A LEGISLAÇÃO VIGENTE?"},
+            {id: "bens_inserviveis_patrimoniais", texto: "OS FLUXOS RELACIONADOS AOS BENS INSERVÍVEIS ESTÃO SENDO SEGUIDOS?"},
+            {id: "inventario_periodico_patrimoniais", texto: "REALIZA INVENTÁRIO PERIODICAMENTE?"},
+            {id: "registro_movimentação_patrimoniais", texto: "HÁ REGISTROS DE MOVIMENTAÇÃO DE BENS PATRIMONIAIS?"},
+            {id: "bens_inserviveis_SEI_patrimoniais", texto: "NO CASO DE EXISTÊNCIA DE BENS INSERVÍVEIS PARA RETIRADA, HÁ PROCESSO SEI INSTRUÍDO?"},
+            {id: "bens_inserviveis_separados_patrimoniais", texto: "NO CASO DE EXISTÊNCIA DE BENS INSERVÍVEIS PARA RETIRADA, ESTÃO SEPARADOS, IDENTIFICADOS E ACOMODADOS ADEQUADAMENTE?"},
+            {id: "bens_identificados_patrimoniais", texto: "OS BENS PATRIMONIAIS ESTÃO COM IDENTIFICAÇÃO ATUALIZADAS (NÃO HÁ PLACA DE IDENTIFICAÇÃO DE OUTRO PARCEIRO?)"}
         ]
-    }
+    },
+    {
+        secaoId: "checklist-seção4",
+        categoria: "Acesso e Acolhimento",
+        itens: [
+            {id: "demanda_unidade_acolhimento", texto: "HÁ ACOLHIMENTO E ATENDIMENTO À DEMANDA ESPONTÂNEA DURANTE TODO O HORÁRIO DE FUNCIONAMENTO DA UNIDADE?"},
+            {id: "profissionais_superior_acolhimento", texto: "TODOS OS PROFISSIONAIS DE NÍVEL SUPERIOR UTILIZAM AGENDA NO SIGA SAÚDE?"},
+            {id: "agendas_configuradas_acolhimento", texto: "AS AGENDAS ESTÃO CONFIGURADAS CONFORME AS DIRETRIZES DA SMS (TEMPO DE LIBERAÇÃO, REPOSIÇÃO DE VAGAS, IMPEDIMENTOS, GRUPOS, VIGÊNCIA, HORÁRIO DE ATENDIMENTO)?"},
+            {id: "unidade_siga_atendimento_acolhimento", texto: "A UNIDADE INSERE NO SIGA EM TEMPO REAL O ATENDIMENTO REALIZADO POR DEMANDA ESPONTÂNEA?"},
+            {id: "orientação_fluxo_unidade_acolhimento", texto: "HÁ ORIENTAÇÃO AOS USUÁRIOS SOBRE OS FLUXOS DE ATENDIMENTO DA UNIDADE?"},
+            {id: "organização_fila_acolhimento", texto: "HÁ ORGANIZAÇÃO DA FILA DE ENTRADA DOS USUÁRIOS E DIRECIONAMENTO AOS SETORES DA UNIDADE?"}
+        ]
+    },
+     {
+        secaoId: "checklist-seção5",
+        categoria: "RH",
+        itens: [
+            {id: "deficit_medica_rh", texto: "HÁ DÉFICIT DE RH NA CATEGORIA MÉDICA?"},
+            {id: "deficit_equipe_multiprofiossional_rh", texto: "HÁ DÉFICIT DE RH NA CATEGORIA DE EQUIPE MULTIPROFISSIONAL?"},
+            {id: "deficit_saude_bucal_rh", texto: "HÁ DÉFICIT DE RH NA CATEGORIA DE SAÚDE BUCAL?"},
+            {id: "deficit_enfermagem_rh", texto: "HÁ DÉFICIT DE RH NA CATEGORIA DA ENFERMAGEM?"},
+            {id: "deficit_administrativo_rh", texto: "HÁ DÉFICIT DE RH NA CATEGORIA DE ADMINISRATIVOS?"},
+            {id: "organização_fila_unidade_rh", texto: "HÁ ORGANIZAÇÃO DA FILA DE ENTRADA DOS USUÁRIOS E DIRECIONAMENTO AOS SETORES DA UNIDADE?"},
+            {id: "deficit_outra_categoria_rh", texto: "HÁ DÉFICIT DE RH EM OUTRA CATEGORIA?"},
+            {id: "cobertura_profissional_afastado_rh", texto: "HÁ COBERTURA PARA OS PROFISSIONAIS QUE ESTÃO AFASTADOS? "},
+            {id: "profissionais_pj_rh", texto: "HÁ PROFISSIONAIS CONTRATADOS COMO PJ? "},
+            {id: "data_visita_profissional_rh", texto: "NA DATA DA VISITA A FREQUÊNCIA DOS PROFISSIONAIS ESTAVA APONTADA REGULARMENTE?"},
+            {id: "escala_profissionais_rh", texto: "HÁ ESCALA DE PROFISSIONAIS? "},
+            {id: "epi_necessario_rh", texto: "FAZ-SE USO DE EPI NECESSÁRIOS?"},
+            {id: "controle_entrega_rh", texto: "FAZ-SE CONTROLE DE ENTREGA DE EPI?"},
+            {id: "uniformes_desprovidos_adornos_rh", texto: "FAZ-SE USO ADEQUADO DE UNIFORMES DESPROVIDOS DE ADORNOS?"},
+            {id: "avental_sms_parceiro_rh", texto: "FAZ USO DE AVENTAL COM LOGO DE SMS E DA INSTITUIÇÃO PARCEIRO (SE ADM. INDIRETA) ?"},
+            {id: "cracha_identificação_rh", texto: "FAZ-SE USO DE CRACHÁ DE IDENTIFICAÇÃO?"},
+            {id: "notificação_acidente_unidade_rh", texto: "FAZ-SE NOTIFICAÇÃO DE ACIDENTE DE TRABALHO DA UNIDADE?"}
+        ]
+    },
+    {
+        secaoId: "checklist-seção6",
+        categoria: "Saúde Bucal",
+        itens: [
+            { id: "ventilacao_iluminacao_suficiente_saude_bucal", texto: "HÁ VENTILAÇÃO E ILUMINAÇÃO SUFICIENTES E ADEQUADAS?" },
+            { id: "lixeira_pedal_tampa_rdc222_saude_bucal", texto: "HÁ LIXEIRA PROVIDA DE PEDAL E TAMPA ADEQUADAMENTE IDENTIFICADA, CONFORME RDC Nº 222/2018?" },
+            { id: "dispenser_suportes_abastecidos_saude_bucal", texto: "HÁ DISPENSER E SUPORTES EM QUANTIDADE SUFICIENTE, ABASTECIDOS E FUNCIONANDO?" },
+            { id: "ambiente_limpo_organizado_saude_bucal", texto: "HÁ AMBIENTE LIMPO E ORGANIZADO COM REGISTRO DE LIMPEZA ATUALIZADO?" },
+            { id: "consultorio_odontologico_barreira_saude_bucal", texto: "HÁ CONSULTÓRIO ODONTOLÓGICO ADEQUADO QUANTO À INDIVIDUALIZAÇÃO DO ESPAÇO DAS CADEIRAS ODONTOLÓGICAS, ATRAVÉS DE BARREIRA FÍSICA DO CHÃO AO TETO?" },
+            { id: "tcle_assinado_saude_bucal", texto: "HÁ TCLE ASSINADO PELO PACIENTE /OU RESPONSÁVEL?" },
+            { id: "material_esterilizado_armazenado_saude_bucal", texto: "O MATERIAL ESTERILIZADO ENCONTRA-SE ARMAZENADO EM LOCAL APROPRIADO?" },
+            { id: "material_esterilizado_identificacao_saude_bucal", texto: "O MATERIAL ESTERILIZADO ENCONTRA-SE DEVIDAMENTE IDENTIFICADO COM DADOS DE RASTREABILIDADE (DATA DE ESTERILIZAÇÃO, VALIDADE E RESPONSÁVEL)?" },
+            { id: "caixa_residuo_perfurocortante_saude_bucal", texto: "HÁ CAIXA PARA RESÍDUO PÉRFURO CORTANTE E SUPORTE?" },
+            { id: "identificacao_data_insumos_saude_bucal", texto: "HÁ IDENTIFICAÇÃO DA DATA DE ABERTURA DOS INSUMOS?" },
+            { id: "rastreamento_insumos_acondicionados_saude_bucal", texto: "OS INSUMOS (EX. GESSO), ACONDICIONADOS EM RECIPIENTES QUE NÃO OS SEUS DE ORIGEM, POSSUEM DADOS QUE PERMITAM A SUA RASTREABILIDADE (FORNECEDOR, LOTE, VALIDADE)?" },
+            { id: "triagem_classificacao_risco_saude_bucal", texto: "HÁ REALIZAÇÃO DE TRIAGEM DE CLASSIFICAÇÃO DE RISCO PARA ACESSO AO TRATAMENTO ODONTOLÓGICO REGULARMENTE A CADA SETE OU DEZ DIAS?" },
+            { id: "documentos_tecnicos_saude_bucal", texto: "OS PROFISSIONAIS TEM CONHECIMENTO E UTILIZAM OS DOCUMENTOS TÉCNICOS DE SAÚDE BUCAL DA ATENÇÃO BÁSICA DA SMS, EM ESPECIAL O DE SEGURANÇA DO PACIENTE NA SAÚDE BUCAL?" },
+            { id: "dentistas_realizam_protese_saude_bucal", texto: "TODOS OS DENTISTAS DA UNIDADE REALIZAM PRÓTESE DENTÁRIA?" }
+        ]
+        
+    },
+    {
+        secaoId: "checklist-seção7",
+        categoria: "Documentação",
+        itens: [
+            { id: "laudo_cmvs_alvara_sanitario_documentação", texto: "HÁ LAUDO CMVS – ALVARÁ SANITÁRIO?" },
+            { id: "laudos_atualizados_avcb_documentação", texto: "HÁ LAUDOS ATUALIZADOS DE AVCB?" },
+            { id: "laudos_limpeza_caixa_agua_documentação", texto: "HÁ LAUDOS ATUALIZADOS DE LIMPEZA DE CAIXA D'ÁGUA?" },
+            { id: "laudos_potabilidade_agua_documentação", texto: "HÁ LAUDOS ATUALIZADOS DE POTABILIDADE DA ÁGUA?" },
+            { id: "laudos_dedetizacao_documentação", texto: "HÁ LAUDOS ATUALIZADOS DE DEDETIZAÇÃO?" },
+            { id: "pcmso_atualizado_documentação", texto: "HÁ PCMSO ATUALIZADO - PROGRAMA DE CONTROLE MÉDICO DE SAÚDE OCUPACIONAL?" },
+            { id: "pgrss_atualizado_documentação", texto: "HÁ PGRSS ATUALIZADO - PLANO DE GERENCIAMENTO DE RESÍDUOS DO SERVIÇO DE SAÚDE?" },
+            { id: "pgr_atualizado_documentação", texto: "HÁ PGR ATUALIZADO - PROGRAMA DE GERENCIAMENTO DE RISCOS?" },
+            { id: "livro_ocorrencias_documentação", texto: "HÁ LIVRO DE OCORRÊNCIAS?" },
+            { id: "controle_ordens_servico_documentação", texto: "HÁ CONTROLE DE ORDENS DE SERVIÇOS ABERTAS COM REGISTRO DE ACOMPANHAMENTO?" },
+            { id: "cronograma_manutencao_equipamentos_documentação", texto: "HÁ CRONOGRAMA PARA MANUTENÇÕES PREVENTIVAS DE EQUIPAMENTOS MÉDICO ASSISTENCIAIS?" },
+            { id: "registros_manutencoes_realizadas_documentação", texto: "HÁ REGISTROS DAS MANUTENÇÕES CORRETIVAS/PREVENTIVAS REALIZADAS, INCLUINDO OS EQUIPAMENTOS DE AR CONDICIONADO, CÂMARAS DE REFRIGERAÇÃO ETC.?" },
+            { id: "plano_contingencia_documentação", texto: "HÁ PLANO DE CONTINGÊNCIA PARA ENERGIA ELÉTRICA, ABASTECIMENTO DE ÁGUA, INTERNET, QUEDA DE SISTEMA - INCLUSIVE EM HORÁRIO FORA DO EXPEDIENTE?" },
+            { id: "caracterizacao_unidade_documentação", texto: "HÁ CARACTERIZAÇÃO DA UNIDADE, INCLUINDO PERFIL EPIDEMIOLÓGICO?" },
+            { id: "cadastro_amlurb_rdc222_documentação", texto: "HÁ CADASTRO NA AMLURB EM CUMPRIMENTO À RDC Nº 222/2018?" },
+            { id: "termos_contrato_terceiros_documentação", texto: "A UNIDADE POSSUI OS TERMOS DE CONTRATO DE TERCEIROS?" },
+            { id: "cronograma_limpeza_salas_documentação", texto: "HÁ CRONOGRAMA DE LIMPEZA EM TODAS AS SALAS?" },
+            { id: "cronograma_limpeza_vidros_documentação", texto: "HÁ CRONOGRAMA DE LIMPEZA DE VIDROS, TOLDOS, LUMINÁRIAS E VENTILADORES?" },
+            { id: "cadastro_cnes_atualizado_documentação", texto: "O ESTABELECIMENTO ESTÁ INSCRITO E MANTÉM SEUS DADOS ATUALIZADOS NO CADASTRO NACIONAL DE ESTABELECIMENTOS DE SAÚDE – CNES?" },
+            { id: "qualificacao_validacao_autoclaves_documentação", texto: "POSSUI QUALIFICAÇÃO E VALIDAÇÃO DAS AUTOCLAVES?" },
+            { id: "lista_mestra_equipamentos_calibraveis_documentação", texto: "POSSUI UMA LISTA MESTRA COM TODOS OS EQUIPAMENTOS CALIBRÁVEIS DA UNIDADE?" },
+            { id: "certificados_calibracao_equipamentos_documentação", texto: "POSSUI OS CERTIFICADOS DE CALIBRAÇÃO DE TODOS OS EQUIPAMENTOS CALIBRÁVEIS DA UNIDADE?" },
+            { id: "controle_documentos_funcionarios_documentação", texto: "POSSUI CONTROLE COM CIÊNCIA DOS POP, MANUAIS, DIRETRIZES, PROTOCOLOS, COMUNICADOS E OUTROS DOCUMENTOS ENVIADOS AOS FUNCIONÁRIOS?" }
+        ]
+    }       
 ];
 
 
