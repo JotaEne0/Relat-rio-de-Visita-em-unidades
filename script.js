@@ -265,6 +265,46 @@ const perguntas = [
             { id: "certificados_calibracao_equipamentos_documentação", texto: "POSSUI OS CERTIFICADOS DE CALIBRAÇÃO DE TODOS OS EQUIPAMENTOS CALIBRÁVEIS DA UNIDADE?" },
             { id: "controle_documentos_funcionarios_documentação", texto: "POSSUI CONTROLE COM CIÊNCIA DOS POP, MANUAIS, DIRETRIZES, PROTOCOLOS, COMUNICADOS E OUTROS DOCUMENTOS ENVIADOS AOS FUNCIONÁRIOS?" }
         ]
+    },
+    {
+        secaoId: "checklist-seção8",
+        categoria: "Assistência Farmacêutica",
+        itens: [
+            { id: "ambiente_limpo_organizado_farmacia", texto: "HÁ AMBIENTE LIMPO E ORGANIZADO COM REGISTRO DE LIMPEZA ATUALIZADO?" },
+            { id: "lixeira_pedal_tampa_identificada_farmacia", texto: "HÁ LIXEIRA PROVIDA DE PEDAL E TAMPA ADEQUADAMENTE IDENTIFICADA, CONFORME RDC Nº 222/2018?" },
+            { id: "dispenser_suportes_abastecidos_funcionando_farmacia", texto: "HÁ DISPENSER E SUPORTES EM QUANTIDADE SUFICIENTE, ABASTECIDOS E FUNCIONANDO?" },
+            { id: "local_armazenamento_injetaveis_farmacia", texto: "HÁ LOCAL ESPECÍFICO E IDENTIFICADO PARA O ARMAZENAMENTO DE INJETÁVEIS?" },
+            { id: "prateleiras_bins_suficientes_farmacia", texto: "HÁ PRATELEIRAS E BINS SUFICIENTES PARA ARMAZENAGEM DE MEDICAMENTOS DE ACORDO COM A LEGISLAÇÃO VIGENTE?" },
+            { id: "organizacao_validade_proxima_farmacia", texto: "HÁ ORGANIZAÇÃO DE FORMA QUE SEJAM DISPENSADOS PRIORITARIAMENTE OS MEDICAMENTOS COM VALIDADE DE VENCIMENTO MAIS PRÓXIMA?" },
+            { id: "medicamentos_afastados_piso_teto_paredes_farmacia", texto: "OS MEDICAMENTOS E INSUMOS ESTÃO AFASTADOS DO PISO, TETO E PAREDES COM ESPAÇAMENTO QUE PERMITE A LIMPEZA ADEQUADA? POSSUEM IDENTIFICAÇÃO DOS ITENS, COM DESCRIÇÃO, LOTE E VALIDADE?" },
+            { id: "prateleiras_bins_alfabetica_farmacia", texto: "HÁ PRATELEIRAS E BINS ORGANIZADOS POR ORDEM ALFABÉTICA?" },
+            { id: "identificacao_generica_bom_estado_farmacia", texto: "HÁ IDENTIFICAÇÃO DOS MEDICAMENTOS COM DENOMINAÇÃO GENÉRICA EM BOM ESTADO (IDENTIFICAÇÃO POR CORES)?" },
+            { id: "blisters_sem_amarracao_inapropriada_farmacia", texto: "HÁ BLISTERS ISENTOS DE AMARRAÇÃO INAPROPRIADA QUE POSSA COMPROMETER A INTEGRIDADE DO MESMO (EX. ELÁSTICO)?" },
+            { id: "farmacia_area_adjunta_sem_caixas_farmacia", texto: "FARMÁCIA E ÁREA ADJACENTE ISENTA DE CAIXAS SECUNDÁRIAS E/OU TERCIÁRIAS QUE SÃO UTILIZADAS PARA TRANSPORTE DOS MEDICAMENTOS?" },
+            { id: "termohigrometros_certificado_calibracao_farmacia", texto: "TERMOHIGRÔMETROS POSSUEM CERTIFICADO DE CALIBRAÇÃO? ESTÃO VÁLIDOS?" },
+            { id: "equipamento_ar_condicionado_funcionando_farmacia", texto: "HÁ EQUIPAMENTO DE AR CONDICIONADO FUNCIONANDO?" },
+            { id: "registro_dispensacao_gss_tempo_real_farmacia", texto: "O REGISTRO DA DISPENSAÇÃO DE MEDICAMENTOS NO GSS OCORRE EM TEMPO REAL NA PRESENÇA DO USUÁRIO, COM EXCEÇÃO DOS CASOS DE INDISPONIBILIDADE DO SISTEMA?" },
+            { id: "falta_medicamentos_unidade_farmacia", texto: "HÁ FALTA DE ALGUM MEDICAMENTOS NA UNIDADE? EM CASO AFIRMATIVO, VERIFICAR PROVIDÊNCIAS QUANTO AO REMANEJAMENTO." },
+            { id: "periodicidade_encerramento_movimentos_gss_farmacia", texto: "QUANTO À PERIODICIDADE DE ENCERRAMENTO DOS MOVIMENTOS NA TELA DE “ESCRITURAÇÃO DE MEDICAMENTOS SUJEITOS A CONTROLE ESPECIAL” DO SISTEMA GSS: “SÃO REALIZADAS SEMANALMENTE?" },
+            { id: "checklist_recebimento_medicamentos_materiais_farmacia", texto: "REALIZA CHECK LIST DE RECEBIMENTO DE MEDICAMENTOS E MATERIAIS? MANTÉM REGISTRO?" },
+            { id: "manual_diluicao_medicamentos_sms_farmacia", texto: "HÁ MANUAL DE DILUIÇÃO DE MEDICAMENTOS DA SMS IMPRESSO NA FARMÁCIA, SALA DE MEDICAÇÃO, ODONTO, EMERGÊNCIA E OUTROS?" },
+            { id: "consulta_farmaceutica_farmacia", texto: "OS FARMACÊUTICOS REALIZAM CONSULTA FARMACÊUTICA?" },
+            { id: "farmaceuticos_participam_grupos_farmacia", texto: "OS FARMACÊUTICOS PARTICIPAM DE GRUPOS?" },
+            { id: "relacao_medicamentos_dispensa_visivel_farmacia", texto: "HÁ RELAÇÃO DE MEDICAMENTOS DE DISPENSAÇÃO VISÍVEL AO USUÁRIO - REMUME?" },
+            { id: "revisao_periodica_cmm_farmacia", texto: "HÁ REVISÃO PERIÓDICA DO CMM, CONSIDERANDO, INCLUSIVE, A SAZONALIDADE?" },
+            { id: "medicamentos_termolabeis_armazenados_farmacia", texto: "OS MEDICAMENTOS TERMOLÁBEIS ESTÃO ARMAZENADOS DE ACORDO COM PROCEDIMENTO OPERACIONAL PADRÃO VIGENTE? (NÃO ARMAZENAR NA PORTA)" },
+            { id: "registro_diario_temperatura_umidade_farmacia", texto: "HÁ REGISTRO DIÁRIO DE TEMPERATURA E UMIDADE DO AMBIENTE?" },
+            { id: "identificacao_medicamentos_alto_risco_farmacia", texto: "HÁ IDENTIFICAÇÃO (BARREIRA) PARA MEDICAMENTOS DE ALTO RISCO E/OU POTENCIALMENTE PERIGOSOS - MAR/MPP?" },
+            { id: "medicamentos_controlados_portaria_344_farmacia", texto: "HÁ MEDICAMENTOS CONTROLADOS ARMAZENADOS DE ACORDO COM A PORTARIA Nº MS 344/1998?" },
+            { id: "monitoramento_validade_medicamentos_farmacia", texto: "FAZ-SE MONITORAMENTO DA VALIDADE DOS MEDICAMENTOS?" },
+            { id: "unitarizacao_medicamentos_legislacao_farmacia", texto: "REALIZA UNITARIZAÇÃO DE MEDICAMENTOS DE ACORDO COM A LEGISLAÇÃO VIGENTE?" },
+            { id: "controle_rastreabilidade_medicamentos_farmacia", texto: "REALIZA CONTROLE E RASTREABILIDADE DE TODOS OS MEDICAMENTOS DA UNIDADE (EMERGÊNCIA, SALA DE MEDICAÇÃO, ODONTOLOGIA ETC.)?" },
+            { id: "certidao_regularidade_crf_sp_farmacia", texto: "HÁ CERTIDÃO DE REGULARIDADE EMITIDA PELO CRF-SP? SE SIM, ESTÁ VISÍVEL AOS USUÁRIOS?" },
+            { id: "lista_medicamentos_inapropriados_idosos_farmacia", texto: "HÁ LISTA DE MEDICAMENTOS INAPROPRIADOS PARA IDOSOS (SALA DO IDOSO E CONSULTÓRIOS)?" },
+            { id: "controle_mensal_validades_emergencia_farmacia", texto: "HÁ CONTROLE MENSAL DAS VALIDADES DOS MEDICAMENTOS DO CARRINHO DE EMERGÊNCIA JUNTO COM A EQUIPE DE ENFERMAGEM?" },
+            { id: "pops_impressos_visiveis_farmacia", texto: "OS POPS ESTÃO IMPRESSOS E VISÍVEIS AOS FUNCIONÁRIOS DO SETOR?" },
+            { id: "pia_torneira_pedal_farmacia", texto: "HÁ PIA COM TORNEIRA, PREFERENCIALMENTE COM ACIONAMENTO POR PEDAL OU OUTRO MECANISMO QUE EVITE A CONTAMINAÇÃO DAS MÃOS?" }
+        ]
     }       
 ];
 
