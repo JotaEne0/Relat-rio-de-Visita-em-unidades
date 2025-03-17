@@ -448,7 +448,123 @@ const perguntas = [
             { id: "registro_doses_aplicadas_procedimento_vacina_outros", texto: "• SÃO MANTIDOS NO ESTABELECIMENTO PARA FINS DE FISCALIZAÇÃO OS REGISTROS DAS DOSES APLICADAS?" },
             { id: "controle_estoque_vacinas_procedimento_vacina_outros", texto: "• O PEDIDO (CONTROLE DE ESTOQUE) É REALIZADO CONFORME O CONSUMO PARA QUE NÃO OCORRAM FALTAS DE VACINAS?" }
         ]
-    }
+    },
+    {
+        secaoId: "checklist-seção10",
+        categoria: "10.4 Curativos",
+        itens: [
+            { id: "ambiente_limpo_organizado_procedimento_curativo_outros", texto: "• HÁ AMBIENTE LIMPO E ORGANIZADO COM REGISTRO DE LIMPEZA ATUALIZADO?" },
+            { id: "pia_torneira_acionamento_pedal_procedimento_curativo_outros", texto: "• HÁ PIA COM TORNEIRA, PREFERENCIALMENTE COM ACIONAMENTO POR PEDAL OU OUTRO MECANISMO QUE EVITE A CONTAMINAÇÃO DAS MÃOS?" },
+            { id: "dispenser_suportes_suficientes_procedimento_curativo_outros", texto: "• HÁ DISPENSER E SUPORTES EM QUANTIDADE SUFICIENTE, ABASTECIDOS E FUNCIONANDO?" },
+            { id: "lixeira_pedal_tampa_identificada_procedimento_curativo_outros", texto: "• HÁ LIXEIRA PROVIDA DE PEDAL E TAMPA ADEQUADAMENTE IDENTIFICADA, CONFORME RDC Nº 222/2018?" },
+            { id: "ralo_escamoteavel_procedimento_curativo_outros", texto: "• POSSUI RALO ESCAMOTEÁVEL?" },
+            { id: "almotolias_frascos_identificados_procedimento_curativo_outros", texto: "• HÁ ALMOTOLIAS E FRASCOS IDENTIFICADOS COM DATA DE ABERTURA E VALIDADE?" },
+            { id: "ventilacao_iluminacao_suficientes_procedimento_curativo_outros", texto: "• HÁ VENTILAÇÃO E ILUMINAÇÃO SUFICIENTES E ADEQUADAS?" },
+            { id: "telas_milimetricas_janelas_procedimento_curativo_outros", texto: "• HÁ TELAS MILIMÉTRICAS EM TODAS AS JANELAS?" },
+            { id: "mobiliario_bom_estado_procedimento_curativo_outros", texto: "• HÁ MOBILIÁRIO EM BOM ESTADO?" },
+            { id: "longarinas_poltronas_macas_procedimento_curativo_outros", texto: "• HÁ LONGARINAS, POLTRONAS E MACAS COM ESTOFAMENTO LAVÁVEL E ÍNTEGRO?" },
+            { id: "pisos_paredes_lavaveis_procedimento_curativo_outros", texto: "• HÁ PISOS E PAREDES COM REVESTIMENTOS QUE SEJAM LAVÁVEIS, OU SEJA, RESISTENTES A LIMPEZA COM ÁGUA E SABÃO?" },
+            { id: "checagem_identificacao_paciente_procedimento_curativo_outros", texto: "• HÁ CHECAGEM NA IDENTIFICAÇÃO DO PACIENTE ANTES DO PROCEDIMENTO COM DUPLO PARÂMETRO?" },
+            { id: "registro_procedimentos_prontuario_procedimento_curativo_outros", texto: "• HÁ REGISTRO DOS PROCEDIMENTOS EM PRONTUÁRIO NO MOMENTO DA REALIZAÇÃO, GARANTINDO A RASTREABILIDADE ADEQUADA?" },
+            { id: "caixas_perfurocortante_procedimento_curativo_outros", texto: "• HÁ CAIXAS DE PERFUROCORTANTE E SUPORTE ADEQUADAS E ATÉ LIMITE ESTABELECIDO?" },
+            { id: "armazenamento_insumos_adequado_procedimento_curativo_outros", texto: "• HÁ ARMAZENAMENTO ADEQUADO DE INSUMOS?" },
+            { id: "controle_insumos_validade_procedimento_curativo_outros", texto: "• OS INSUMOS SÃO CONTROLADOS ADEQUADAMENTE COM CONFERÊNCIA DE QUANTIDADE E VALIDADE, COM DADOS DE RASTREABILIDADE ADEQUADOS?" },
+            { id: "instrumentais_esterilizados_condicoes_procedimento_curativo_outros", texto: "• OS INSTRUMENTAIS ESTERELIZADOS SÃO ACONDICIONADOS EM CONDIÇÕES ADEQUADAS, COM DADOS DE RASTREABILIDADE ADEQUADOS?" },
+            { id: "documentos_pops_atualizados_procedimento_curativo_outros", texto: "• HÁ DOCUMENTOS E POPS ATUALIZADOS DISPONÍVEIS AOS FUNCIONÁRIOS DO SETOR?" },
+            { id: "equipe_enfermagem_epi_procedimento_curativo_outros", texto: "• A EQUIPE DE ENFERMAGEM UTILIZA EPI ADEQUADO?" },
+            { id: "maca_diva_papel_lencol_procedimento_curativo_outros", texto: "• HÁ MACA OU DIVÃ COM PAPEL LENÇOL?" },
+            { id: "equipamentos_condicoes_adequadas_procedimento_curativo_outros", texto: "• HÁ EQUIPAMENTOS EM CONDIÇÕES ADEQUADAS?" },
+            { id: "equipamentos_calibracao_registro_procedimento_curativo_outros", texto: "• EQUIPAMENTOS SÃO CONFERIDOS PERIODICAMENTE E POSSUEM REGISTROS DE CALIBRAGEM?" },
+            { id: "mapa_risco_setor_procedimento_curativo_outros", texto: "• HÁ MAPA DE RISCO DO SETOR?" },
+            { id: "plano_contingencia_setor_procedimento_curativo_outros", texto: "• HÁ PLANO DE CONTINGÊNCIA DO SETOR?" },
+            { id: "lavatorio_adequado_procedimento_curativo_outros", texto: "• LAVATÓRIO ADEQUADO?" },
+            { id: "ducha_aquecida_procedimento_curativo_outros", texto: "• HÁ DUCHA AQUECIDA?" },
+            { id: "baixa_insumos_gss_siga_procedimento_curativo_outros", texto: "• A BAIXA DE INSUMOS É REALIZADA NO GSS E SIGA FERIDAS?" },
+            { id: "registro_atendimento_siga_feridas_procedimento_curativo_outros", texto: "• É REALIZADO REGISTRO DE ATENDIMENTO NO SIGA FERIDAS?" },
+            { id: "busca_ativa_faltosos_procedimento_curativo_outros", texto: "• REALIZA E DOCUMENTA A BUSCA ATIVA DOS FALTOSOS?" }
+        ]
+    },
+    {
+        secaoId: "checklist-seção10",
+        categoria: "10.5 Esterilização/Espurgo",
+        itens: [
+            { id: "ambiente_limpo_organizado_procedimento_esterelizacao_outros", texto: "• HÁ AMBIENTE LIMPO E ORGANIZADO COM REGISTRO DE LIMPEZA ATUALIZADO?" },
+            { id: "pia_torneira_acionamento_pedal_procedimento_esterelizacao_outros", texto: "• HÁ PIA COM TORNEIRA, PREFERENCIALMENTE COM ACIONAMENTO POR PEDAL OU OUTRO MECANISMO QUE EVITE A CONTAMINAÇÃO DAS MÃOS?" },
+            { id: "dispenser_suportes_suficientes_procedimento_esterelizacao_outros", texto: "• HÁ DISPENSER E SUPORTES EM QUANTIDADE SUFICIENTE, ABASTECIDOS E FUNCIONANDO?" },
+            { id: "lixeira_pedal_tampa_identificada_procedimento_esterelizacao_outros", texto: "• HÁ LIXEIRA PROVIDA DE PEDAL E TAMPA ADEQUADAMENTE IDENTIFICADA, CONFORME RDC Nº 222/2018?" },
+            { id: "almotolias_frascos_identificados_procedimento_esterelizacao_outros", texto: "• HÁ ALMOTOLIAS E FRASCOS IDENTIFICADOS COM DATA DE ABERTURA E VALIDADE?" },
+            { id: "ventilacao_iluminacao_suficientes_procedimento_esterelizacao_outros", texto: "• HÁ VENTILAÇÃO E ILUMINAÇÃO SUFICIENTES E ADEQUADAS?" },
+            { id: "telas_milimetricas_janelas_procedimento_esterelizacao_outros", texto: "• HÁ TELAS MILIMÉTRICAS EM TODAS AS JANELAS?" },
+            { id: "ralo_escamoteavel_procedimento_esterelizacao_outros", texto: "• POSSUI RALO ESCAMOTEÁVEL?" },
+            { id: "mobiliario_bom_estado_procedimento_esterelizacao_outros", texto: "• HÁ MOBILIÁRIO EM BOM ESTADO?" },
+            { id: "pisos_paredes_lavaveis_procedimento_esterelizacao_outros", texto: "• HÁ PISOS E PAREDES COM REVESTIMENTOS QUE SEJAM LAVÁVEIS, OU SEJA, RESISTENTES A LIMPEZA COM ÁGUA E SABÃO?" },
+            { id: "caixas_perfurocortante_procedimento_esterelizacao_outros", texto: "• HÁ CAIXAS DE PERFUROCORTANTE E SUPORTE ADEQUADAS E ATÉ LIMITE ESTABELECIDO?" },
+            { id: "armazenamento_insumos_adequado_procedimento_esterelizacao_outros", texto: "• HÁ ARMAZENAMENTO ADEQUADO DE INSUMOS?" },
+            { id: "controle_insumos_validade_procedimento_esterelizacao_outros", texto: "• OS INSUMOS SÃO CONTROLADOS ADEQUADAMENTE COM CONFERÊNCIA DE QUANTIDADE E VALIDADE, COM DADOS DE RASTREABILIDADE ADEQUADOS?" },
+            { id: "instrumentais_esterilizados_condicoes_procedimento_esterelizacao_outros", texto: "• OS INSTRUMENTAIS ESTERELIZADOS SÃO ACONDICIONADOS EM CONDIÇÕES ADEQUADAS, COM DADOS DE RASTREABILIDADE ADEQUADOS?" },
+            { id: "documentos_pops_atualizados_procedimento_esterelizacao_outros", texto: "• HÁ DOCUMENTOS E POPS ATUALIZADOS DISPONÍVEIS AOS FUNCIONÁRIOS DO SETOR?" },
+            { id: "equipe_enfermagem_epi_procedimento_esterelizacao_outros", texto: "• A EQUIPE DE ENFERMAGEM UTILIZA EPI ADEQUADO?" },
+            { id: "equipamentos_condicoes_adequadas_procedimento_esterelizacao_outros", texto: "• HÁ EQUIPAMENTOS EM CONDIÇÕES ADEQUADAS?" },
+            { id: "equipamentos_calibracao_registro_procedimento_esterelizacao_outros", texto: "• EQUIPAMENTOS SÃO CONFERIDOS PERIODICAMENTE E POSSUEM REGISTROS DE CALIBRAGEM?" },
+            { id: "mapa_risco_setor_procedimento_esterelizacao_outros", texto: "• HÁ MAPA DE RISCO DO SETOR?" },
+            { id: "plano_contingencia_setor_procedimento_esterelizacao_outros", texto: "• HÁ PLANO DE CONTINGÊNCIA DO SETOR?" },
+            { id: "autoclave_capacidade_suficiente_procedimento_esterelizacao_outros", texto: "• HÁ AUTOCLAVE COM CAPACIDADE SUFICIENTE PARA ATENDER A DEMANDA DA UNIDADE?" },
+            { id: "incubadora_controle_biologico_procedimento_esterelizacao_outros", texto: "• HÁ INCUBADORA PARA CONTROLE DE RISCO BILOGICO ADEQUADA À QUANTIDADE DE MATERIAIS UTILIZADOS (INDICADOR BIOLÓGICO), COM CALIBRAÇÃO ANUAL?" },
+            { id: "seladora_disponivel_procedimento_esterelizacao_outros", texto: "• HÁ SELADORA DISPONÍVEL E FUNCIONANDO?" },
+            { id: "caderno_controle_esterilizacao_procedimento_esterelizacao_outros", texto: "• HÁ CADERNO DE CONTROLE DIÁRIO DE ESTERILIZAÇÃO DEVIDAMENTE ATUALIZADO?" },
+            { id: "fluxo_material_sujo_limpo_procedimento_esterelizacao_outros", texto: "• FAZ-SE FLUXO CORRETO DE MATERIAL SUJO E LIMPO?" },
+            { id: "caixa_transporte_identificada_procedimento_esterelizacao_outros", texto: "• A CAIXA DE TRANSPORTE DE MATERIAL LIMPO E SUJO É IDENTIFICADA ADEQUADAMENTE?" },
+            { id: "salas_expurgo_esterilizacao_procedimento_esterelizacao_outros", texto: "• HÁ SALAS ESPECÍFICAS DE EXPURGO E ESTERELIZAÇÃO, COM PASS THROUGH (JANELA DE PASSAGEM COM FECHAMENTO)?" },
+            { id: "identificacao_pacotes_instrumentais_procedimento_esterelizacao_outros", texto: "• HÁ IDENTIFICAÇÃO DOS PACOTES DE INSTRUMENTAIS, ESTERELIZADOS, COM DATA E RESPONSÁVEL, BEM COMO DE VALIDADE?" },
+            { id: "liberacao_material_biologico_procedimento_esterelizacao_outros", texto: "• REALIZA A LIBERAÇÃO DO MATERIAL ESTERELIZADO APENAS APÓS O TÉRMINO DO TESTE BIOLÓGICO?" },
+            { id: "testagem_acido_peracetico_procedimento_esterelizacao_outros", texto: "• REALIZA TESTAGEM E REGISTRO DO ÁCIDO PERACÉTICO, CONFORME PRECONIZADO?" },
+            { id: "detergente_enzimatico_disponivel_procedimento_esterelizacao_outros", texto: "• POSSUI DETERGENTE ENZIMÁTICO DISPONÍVEL, COM REGISTRO DE DILUIÇÃO E VALIDADE?" },
+            { id: "limpeza_autoclave_registro_procedimento_esterelizacao_outros", texto: "• FAZ-SE LIMPEZA SISTEMÁTICA DA AUTOCLAVE, COM REGISTRO?" }
+        ]
+    },
+    {
+        secaoId: "checklist-seção10",
+        categoria: "10.6 Maleta/Carrinho de Emergência",
+        itens: [
+            {id: "material_emergencia_acessivel_maleta_carrinho", texto: "• O MATERIAL DE EMERGÊNCIA ESTÁ ACESSÍVEL?"},
+            {id: "profissionais_capacitados_material_emergencia_maleta_carrinho", texto: "• HÁ PROFISSIONAIS CAPACITADOS PARA O USO DO MATERIAL DE EMERGÊNCIA, DURANTE TODO O FUNCIONAMENTO DA UNIDADE?"},
+            {id: "checagem_caixa_emergencia_maleta_carrinho", texto: "• É REALIZADA A CHECAGEM DA CAIXA/CARINHO DE EMERGÊNCIA (MEDICAMENTOS, INSUMOS E EQUIPAMENTOS), DOCUMENTADA E CONFORME RESPECTIVA LEGISLAÇÃO?"},
+            {id: "verificacao_diaria_dea_maleta_carrinho", texto:"• HÁ VERIFICAÇÃO DIÁRIA DE FUNCIONAMENTO DO DEA, COM REGISTRO?" },
+            {id: "calibracao_dea_maleta_carrinho",texto: "• HÁ CALIBRAÇÃO DO DEA?"},
+            {id: "pas_dea_validade_maleta_carrinho", texto: "• AS PAS DO DEA ESTÃO NA VALIDADE?"}
+        ]
+    },
+    {
+    secaoId: "checklist-seção11",
+    categoria: "Regulação",
+    itens: [
+        {id: "validacao_requalificacao_fila_espera_regulação11", texto: "• HÁ VALIDAÇÃO E REQUALIFICAÇÃO DA FILA DE ESPERA PERIODICAMENTE?"},
+        {id: "busca_vagas_presenca_usuario_regulação11", texto: "• HÁ BUSCA DE VAGAS NA PRESENÇA DO USUÁRIO?" },
+        {id: "insercao_pedidos_filas_siga_regulação11", texto: "• INSERE TODOS OS PEDIDOS NAS FILAS NO SIGA OU AVALIAÇÃO DO REGULADOR, CONFORME PROTOCOLO?"},
+        {id: "equipe_tecnica_horario_regulação11", texto: "• HÁ EQUIPE TÉCNICA COM HORÁRIO DEDICADO PARA ACOMPANHAMENTO DOS PROCESSOS REGULATÓRIOS?"},
+        {id: "protocolo_regulacao_acesso_regulação11", texto: "• HÁ PROTOCOLO DISPONÍVEL DE REGULAÇÃO DE ACESSO?"},
+        {id: "rotina_atualizacao_dados_regulação11", texto: "• HÁ ROTINA DE ATUALIZAÇÃO DE DADOS CADASTRAIS DO USUÁRIO?"},
+        {id: "gestao_fila_espera_multiprofissional_regulação11", texto: "• HÁ GESTÃO DA FILA DE ESPERA PARA A EQUIPE MULTIPROFISSIONAL?"}
+    ]
+},
+{
+    secaoId: "checklist-seção12",
+    categoria: "Constituição de Comissões/Comitês/Nucleos",
+    itens: [
+        {id: "ubs_possui_nucleo_prevencao_violencia_comite_nucleo", texto: "• A UBS POSSUI NÚCLEO DE PREVENÇÃO DE VIOLÊNCIA – NPV?"},
+        {id: "ubs_possui_grupo_controle_dengue_decreto_comite_nucleo", texto: "• A UBS POSSUI GRUPO INTERNO DE CONTROLE DA DENGUE – DECRETO 56.669?"},
+        {id: "grupo_vistorias_roteiro_aedes_comite_nucleo", texto: "• O GRUPO FAZ A VISTORIAS PREVISTAS NO 'ROTEIRO PARA CONTROLE DO AEDES EM EDIFICAÇÕES PÚBLICAS'?"},
+        {id: "ubs_possui_nucleo_seguranca_paciente_comite_nucleo", texto: "• A UBS POSSUI NÚCLEO DE SEGURANÇA DO PACIENTE?"},
+        {id: "ubs_possui_comissao_prontuario_comite_nucleo", texto: "• A UBS POSSUI COMISSÃO DE PRONTUÁRIO?"},
+        {id: "ubs_possui_nuvis_ab_comite_nucleo", texto: "• A UBS POSSUI NÚCLEO DE VIGILÂNCIA EM SAÚDE - NUVIS-AB?"},
+        {id: "reuniao_mensal_nuvis_ab_comite_nucleo", texto: "• ESTÁ INSTITUÍDA A REUNIÃO MENSAL ENTRE OS INTEGRANTES DO NUVIS-AB?"},
+        {id: "ubs_participa_comite_mortalidade_materno_infantil_comite_nucleo", texto: "• A UBS PARTICIPA DAS DISCUSSÕES DO COMITÊ DE MORTALIDADE MATERNO-INFANTIL?"},
+        {id: "ubs_participa_comite_sifilis_vertical_comite_nucleo", texto: "• A UBS PARTICIPA DAS DISCUSSÕES DO COMITÊ DE TRANSMISSÃO VERTICAL DA SÍFILIS?"},
+        {id: "ubs_participa_comite_acumulacao_comite_nucleo", texto: "• A UBS PARTICIPA DAS DISCUSSÕES DO COMITÊ INTERSECRETARIAL DE ATENÇÃO INTEGRAL ÀS PESSOAS EM SITUAÇÃO DE ACUMULAÇÃO?"}
+    ]
+},
+
+    
 ];
 
 
