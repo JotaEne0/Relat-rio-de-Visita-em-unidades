@@ -30,14 +30,13 @@
     </header>
     <main>
         <form id="relatorio-form">
-            <fieldset>
-                <legend>1 - Estrutura e Organização</legend>
-                <h3>Identificação da unidade</h3>
-                <button class="collapse-button" onclick="toggleCollapse('checklist-seção1')">Mostrar/Esconder Conteúdo</button>
-                <div id="checklist-seção1" class="collapse-content">
-                    <!-- Adicione as demais perguntas seguindo o mesmo padrão -->
-                </div>
-            </fieldset>
+           <!-- Exemplo para a seção 1 (repita para as demais) -->
+           <fieldset>
+            <legend>1 - Estrutura e Organização</legend>
+            <div class="section-wrapper">
+                <div id="checklist-seção1" class="collapse-content"></div>
+            </div>
+        </fieldset>
             <fieldset>
                 <legend>2 - Recepção Prontuário, SAME</legend>
                 <h3>Identificação da unidade</h3>
@@ -161,14 +160,8 @@
                 .catch(err => console.error('Erro no Service Worker', err));
         }
 
-        function toggleCollapse(sectionId) {
-            var content = document.getElementById(sectionId);
-            if (content.style.display === "none") {
-                content.style.display = "block";
-            } else {
-                content.style.display = "none";
-            }
-        }
+        
+        
     </script>
 </body>
 </html>

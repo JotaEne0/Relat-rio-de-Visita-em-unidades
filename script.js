@@ -710,14 +710,51 @@ const perguntas = [
 
 
 function gerarChecklist() {
+    const secoesUnicas = new Set();
+
+    // Passo 1: Criar botões para cada seção única
+    perguntas.forEach(secao => {
+        if (!secoesUnicas.has(secao.secaoId)) {
+            secoesUnicas.add(secao.secaoId);
+            const container = document.getElementById(secao.secaoId);
+            
+            if (container) {
+                // Criar div wrapper para organizar a estrutura
+                const wrapper = document.createElement("div");
+                wrapper.className = "section-wrapper";
+
+                // Botão Superior
+                const topButton = document.createElement("button");
+                topButton.className = "collapse-button top";
+                topButton.textContent = "Mostrar Conteúdo ▼";
+                topButton.onclick = () => toggleCollapse(secao.secaoId);
+
+                // Botão Inferior
+                const bottomButton = document.createElement("button");
+                bottomButton.className = "collapse-button bottom";
+                bottomButton.textContent = "Esconder Conteúdo ▲";
+                bottomButton.style.display = "none";
+                bottomButton.id = `botao-rodape-${secao.secaoId}`;
+                bottomButton.onclick = () => toggleCollapse(secao.secaoId);
+
+                // Reorganizar a estrutura
+                container.parentNode.insertBefore(wrapper, container);
+                wrapper.appendChild(topButton);
+                wrapper.appendChild(container);
+                wrapper.appendChild(bottomButton);
+            }
+        }
+    });
+
+    // Passo 2: Gerar perguntas (código original)
     perguntas.forEach(secao => {
         const container = document.getElementById(secao.secaoId);
-        if (!container) return; // Se a seção não existir, ignore
+        if (!container) return;
 
-        // Criar um fieldset para cada categoria dentro da seção
         const fieldset = document.createElement("fieldset");
         const legend = document.createElement("legend");
         legend.textContent = secao.categoria;
+        fieldset.appendChild(legend);
         fieldset.appendChild(legend);
 
         secao.itens.forEach(pergunta => {
@@ -753,58 +790,55 @@ function gerarChecklist() {
         container.appendChild(fieldset); // Adiciona o fieldset dentro do container da seção correta
     });
 }
+function toggleCollapse(sectionId) {
+    const content = document.getElementById(sectionId);
+    const bottomButton = document.getElementById(`botao-rodape-${sectionId}`);
+    const topButton = content.previousElementSibling;
+
+    // Verifica se o conteúdo está oculto
+    const estaOculto = content.style.display === "none" || !content.style.display;
+
+    // Alterna estados
+    content.style.display = estaOculto ? "block" : "none";
+    bottomButton.style.display = estaOculto ? "block" : "none";
+    topButton.textContent = estaOculto ? "Esconder Conteúdo ▲" : "Mostrar Conteúdo ▼";
+}
 
 // Chamar a função ao carregar a página
 document.addEventListener("DOMContentLoaded", gerarChecklist);
 
 // Salvar e gerar relatório
+// Mantenha APENAS este bloco:
 form.addEventListener("submit", event => {
     event.preventDefault();
     
     let relatorio = "Relatório de Visita:\n";
-    console.log("Iniciando geração do relatório...");
     
-    form.addEventListener("submit", event => {
-        event.preventDefault();
-    
-        let relatorio = "Relatório de Visita:\n";
-    
-        perguntas.forEach(secao => {
-            relatorio += `\n=== ${secao.categoria} ===\n`;
-    
-            secao.itens.forEach(pergunta => {
-                const statusElement = document.querySelector(`[name='${pergunta.id}']`);
-                const justificativaElement = document.querySelector(`[name='justificativa_${pergunta.id}']`);
-    
-                if (statusElement) {
-                    const status = statusElement.value;
-                    relatorio += `${pergunta.texto}: ${status.toUpperCase()}\n`;
-    
-                    if (justificativaElement && justificativaElement.value.trim()) {
-                        relatorio += `Justificativa: ${justificativaElement.value.trim()}\n`;
-                    }
+    perguntas.forEach(secao => {
+        relatorio += `\n=== ${secao.categoria} ===\n`;
+        
+        secao.itens.forEach(pergunta => {
+            const statusElement = document.querySelector(`[name='${pergunta.id}']`);
+            const justificativaElement = document.querySelector(`[name='justificativa_${pergunta.id}']`);
+            
+            if (statusElement) {
+                const status = statusElement.value;
+                relatorio += `${pergunta.texto}: ${status.toUpperCase()}\n`;
+                
+                if (justificativaElement?.value.trim()) {
+                    relatorio += `Justificativa: ${justificativaElement.value.trim()}\n`;
                 }
-            });
+            }
         });
-    
-        const observacao = document.getElementById("observacao");
-        if (observacao && observacao.value.trim()) {
-            relatorio += `\nObservações:\n${observacao.value.trim()}\n`;
-        }
-    
-        relatorioElement.textContent = relatorio;    
     });
     
     const observacao = document.getElementById("observacao").value.trim();
     if (observacao) {
         relatorio += `\nObservações:\n${observacao}\n`;
-        console.log(`Observações: ${observacao}`);
     }
     
     relatorioElement.textContent = relatorio;
-    console.log("Relatório gerado com sucesso.");
 });
-
 // Exportar relatório como arquivo de texto
 exportButton.addEventListener("click", () => {
     const blob = new Blob([relatorioElement.textContent], { type: "text/plain" });
