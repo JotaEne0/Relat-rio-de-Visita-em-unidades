@@ -536,7 +536,7 @@ const perguntas = [
     },
     {
     secaoId: "checklist-seção11",
-    categoria: "Regulação",
+    categoria: "11 Regulação",
     itens: [
         {id: "validacao_requalificacao_fila_espera_regulação11", texto: "• HÁ VALIDAÇÃO E REQUALIFICAÇÃO DA FILA DE ESPERA PERIODICAMENTE?"},
         {id: "busca_vagas_presenca_usuario_regulação11", texto: "• HÁ BUSCA DE VAGAS NA PRESENÇA DO USUÁRIO?" },
@@ -549,7 +549,7 @@ const perguntas = [
 },
 {
     secaoId: "checklist-seção12",
-    categoria: "Constituição de Comissões/Comitês/Nucleos",
+    categoria: "12.1 Constituição de Comissões/Comitês/Nucleos",
     itens: [
         {id: "ubs_possui_nucleo_prevencao_violencia_comite_nucleo", texto: "• A UBS POSSUI NÚCLEO DE PREVENÇÃO DE VIOLÊNCIA – NPV?"},
         {id: "ubs_possui_grupo_controle_dengue_decreto_comite_nucleo", texto: "• A UBS POSSUI GRUPO INTERNO DE CONTROLE DA DENGUE – DECRETO 56.669?"},
@@ -563,8 +563,149 @@ const perguntas = [
         {id: "ubs_participa_comite_acumulacao_comite_nucleo", texto: "• A UBS PARTICIPA DAS DISCUSSÕES DO COMITÊ INTERSECRETARIAL DE ATENÇÃO INTEGRAL ÀS PESSOAS EM SITUAÇÃO DE ACUMULAÇÃO?"}
     ]
 },
+{
+    secaoId: "checklist-seção12",
+    categoria: "12.2 Reuniões e Educação Permanente",
+    itens: [
+        {id: "cronograma_registro_reunioes_equipe_educacao_permanente", texto: "• HÁ CRONOGRAMA E REGISTRO DE REUNIÕES DE EQUIPE, TÉCNICAS E GERAIS?"},
+        {id: "planejamento_educacao_permanente_educacao_permanente", texto: "• HÁ PLANEJAMENTO INTERNO DE EDUCAÇÃO PERMANENTE?"},
+        {id: "reunioes_conselho_gestor_educacao_permanente", texto: "• HÁ CRONOGRAMA E REGISTRO DE REUNIÕES DO CONSELHO GESTOR, ACESSÍVEL E DE CONHECIMENTO DAS EQUIPES?"},
+        {id: "reunioes_comissao_prontuario_educacao_permanente", texto: "• HÁ CRONOGRAMA E REGISTRO DE REUNIÕES DA COMISSÃO DE PRONTUÁRIO, ACESSÍVEL E DE CONHECIMENTO DAS EQUIPES?"},
+        {id: "reunioes_matriciamento_saude_mental_educacao_permanente", texto: "• HÁ CRONOGRAMA E REGISTRO DE REUNIÕES DE MATRICIAMENTO EM SAÚDE MENTAL, ACESSÍVEL E DE CONHECIMENTO DAS EQUIPES?"},
+        {id: "reunioes_nuvis_educacao_permanente", texto: "• HÁ CRONOGRAMA E REGISTRO DE REUNIÕES DO NÚCLEO DE VIGILÂNCIA - NUVIS ACESSIVEL E DE CONHECIMENTO DAS EQUIPES?"},
+        {id: "reunioes_nucleo_qualidade_seguranca_educacao_permanente", texto: "• HÁ CRONOGRAMA E REGISTRO DE REUNIÕES DO NÚCLEO DE QUALIDADE E SEGURANÇA, ACESSÍVEL E DE CONHECIMENTO DAS EQUIPES?"},
+        {id: "reunioes_comite_morte_materno_infantil_educacao_permanente", texto: "• HÁ CRONOGRAMA E REGISTRO DE REUNIÕES DO COMITÊ MORTE MATERNO-INFANTIL, ACESSÍVEL E DE CONHECIMENTO DAS EQUIPES?"},
+        {id: "metas_seguranca_paciente_educacao_permanente", texto: "• HÁ DOCUMENTADA E DISSEMINADA AS METAS INTERNACIONAIS DE SEGURANÇA DO PACIENTE?"},
+        {id: "abordagem_ouvidorias_reunioes_educacao_permanente", texto: "• HÁ ABORDAGEM DAS OUVIDORIAS EM REUNIÕES DE EQUIPE E CONSELHO GESTOR?"},
+        {id: "unidade_conhece_plamep_sts_educacao_permanente", texto: "• A UNIDADE CONHECE O PLAMEP DA STS?"}
+    ]
+},
+{
+    secaoId: "checklist-seção13",
+    categoria: "13.1 Doenças Crônicas não Transmissíveis",
+    itens: [
+        {id: "registro_busca_ativa_dcnt_doencas_cronicas", texto: "• HÁ REGISTROS (EVIDÊNCIAS) DA REALIZAÇÃO DE BUSCA ATIVA (INTERNA E/OU EXTERNA) MENSAL PARA PESSOAS COM DCNT CONFORME PROTOCOLO DE SMS?"},
+        {id: "monitoramento_pressao_arterial_doencas_cronicas", texto: "• HÁ REGISTROS (EVIDÊNCIAS) DA REALIZAÇÃO DO MONITORAMENTO DE PRESSÃO ARTERIAL PARA ACOMPANHAMENTO MENSAL E CONTROLE DE HIPERTENSOS?"},
+        {id: "registro_estratificacao_risco_hipertensao_doencas_cronicas", texto: "• HÁ REGISTRO INDIVIDUAL DO RESULTADO (CLASSIFICAÇÃO BAIXO, MÉDIO E ALTO) DO PROCEDIMENTO DE ESTRATIFICAÇÃO DE RISCO CARDIOVASCULAR PARA HIPERTENSOS (PESSOAS COM DIAGNÓSTICO MÉDICO)?"},
+        {id: "relatorio_acoes_coletivas_autocuidado_doencas_cronicas", texto: "• HÁ RELATÓRIO(S) ATUALIZADO(S) SOBRE PLANEJAMENTO E EXECUÇÃO DE AÇÕES COLETIVAS E ABORDAGENS MULTIPROFISSIONAL/INTERDISCIPLINAR PARA MUDANÇA DE ESTILO DE VIDA (GRUPOS EDUCATIVOS/PLANO DE AUTOCUIDADO)?"}
+    ]
+},
+{
+    secaoId: "checklist-seção13",
+    categoria: "13.2 Programa Melhor em Casa (Perguntas que a Ubs deve responder",
+    itens: [
+        {id: "evidencia_usuarios_emad_melhor_casa", texto: "• HÁ EVIDÊNCIA DA RELAÇÃO USUÁRIOS QUE A EMAD ACOMPANHA?"},
+        {id: "evidencia_visitas_paciente_melhor_casa", texto: "• HÁ EVIDÊNCIA ESTRUTURADA DAS ÚLTIMAS VISITAS REALIZADAS PARA OS PACIENTES AD1?"}
+    ]
+},
+{
+    secaoId: "checklist-seção13",
+    categoria: "13.3 Programa Cuidando de Pessoas com Doenças Raras",
+    itens: [
+        {id: "participacao_profissional_curso_doencas_raras", texto: "• HÁ PARTICIPAÇÃO DE PELO MENOS 1 PROFISSIONAL NO CURSO DE SENSIBILIZAÇÃO EM DOENÇAS RARAS?"}
+    ]
+},
+{
+    secaoId: "checklist-seção13",
+    categoria: "13.4 Programa ODP",
+    itens: [
+        {id: "relatorio_monitoramento_cadastradas_programa_ODP", texto: "• HÁ REGISTROS INDIVIDUAIS (COMPLETOS) E RELATÓRIO(S) ATUALIZADO(S) SOBRE MONITORAMENTO DAS PESSOAS CADASTRADAS NO PROGRAMA DE ODP?"}
+    ]
+},
+{
+    secaoId: "checklist-seção13",
+    categoria: "13.5 Saúde do Homem",
+    itens: [
+        {id: "registro_pre_natal_parceiro_testagem_saude_homem", texto: "• HÁ REGISTROS INDIVIDUAIS SOBRE CONSULTAS DE PRÉ-NATAL DO PARCEIRO ABORDANDO TESTAGEM, DIAGNÓSTICO E / OU ACONSELHAMENTO ( PATERNIDADE RESPONSÁVEL / SAÚDE SEXUAL E REPRODUTIVA)?"},
+        {id: "açoes_populacao_masculina_saude_homem", texto: "• HÁ REGISTROS E/OU EVIDÊNCIAS DA REALIZAÇÃO DE AÇÕES VOLTADAS A POPULAÇÃO MASCULINA (ACOLHIMENTO/ACESSO, RASTREAMENTO E DETECÇÃO PRECOCE DE DOENÇAS GENITO-URINÁRIAS E CA MAIS FREQUENTES) PRECONIZADAS NA POLÍTICA MUNICIPAL DE ATENÇÃO INTEGRAL À SAÚDE DO HOMEM - PMAISH?"}
+    ]
+},
+{
+    secaoId: "checklist-seção13",
+    categoria: "13.6 IDP",
+    itens: [
+        {id: "controle_consultas_laudos_IDP", texto: "• HÁ CONTROLE DE CONSULTAS PARA RENOVAÇÃO DOS LAUDOS? "},
+        {id: "controle_visita_domiciliar_IDP", texto: "• HÁ CONTROLE DE VISITAS DOMICILIARES DOS ACAMADOS? "},
+        {id: "projeto_unidade_cuidadores_IDP", texto: "• HÁ ALGUM PROJETO DA UNIDADE PARA CUIDADORES? "}
+    ]
+},
+{
+    secaoId: "checklist-seção13",
+    categoria: "13.7 PAMG",
+    itens: [
+        {id: "acompanhemento_parcientes_inseridos_PAMG", texto: "• HÁ ACOMPANHAMENTO DOS PACIENTES INSERIDOS NO PAMG?"}
+    ]
+},
+{
+    secaoId: "checklist-seção13",
+    categoria: "13.8 Saúde Mental",
+    itens: [
+        {id: "reuniao_matriciamento_caps_saude_mental", texto: "• HÁ REUNIÃO DE MATRICIAMENTO COM CAPS?"},
+        {id: "espaco_discussao_equipes_multi_saude_mental", texto: "• HÁ ESPAÇO PERIÓDICO DE DISCUSSÃO ENTRE OS PROFISSIONAIS DAS EQUIPES MULTI?"},
+        {id: "pts_prontuario_saude_mental", texto: "• HÁ PTS NO PRONTUÁRIO?"},
+        {id: "articulacao_rede_intersetorial_propostas_saude_mental", texto: "• HÁ ARTICULAÇÃO DA REDE INTERSETORIAL PARA AMPLIAÇÃO DAS PROPOSTAS PSICOSSOCIAIS?"},
+        {id: "protocolos_documentos_tecnicos_disponiveis_saude_mental", texto: "• HÁ PROTOCOLOS, NOTAS E DEMAIS DOCUMENTOS TÉCNICOS À DISPOSIÇÃO PARA CONSULTA DAS EQUIPES?"}
+    ]
+},
+{
+    secaoId: "checklist-seção13",
+    categoria: "13.9 Promoção da Saúde",
+    itens: [
+        {id: "coleta_raca_cor_sistemas_promacao_saude", texto: "• COLETA E PREENCHE O QUESITO RAÇA/COR NOS SISTEMAS DE INFORMAÇÃO?"},
+        {id: "busca_ativa_doenca_falciforme_promacao_saude", texto: "• FAZ-SE BUSCA ATIVA DAS CRIANÇAS DIAGNOSTICADAS COM DOENÇA FALCIFORME NA TRIAGEM NEONATAL?"},
+        {id: "linha_cuidados_violencia_promacao_saude", texto: "• A LINHA DE CUIDADOS DA SAÚDE DA PESSOA EM SITUAÇÃO DE VIOLÊNCIA ESTÁ SENDO IMPLEMENTADA?"},
+        {id: "projeto_pavs_promacao_saude", texto: "• HÁ PROJETO BASEADO NO DIAGNÓSTICO SOCIOAMBIENTAL - PAVS?"},
+        {id: "acompanhamento_antropometrico_promacao_saude", texto: "• HÁ ACOMPANHAMENTO DO PESO E ALTURA DE CRIANÇAS E GESTANTES, BEM COMO PREENCHIMENTO DOS MARCADORES DE CONSUMO ALIMENTAR, COM SEU RESPECTIVO REGISTRO?"},
+        {id: "grupos_educacao_nutricional_promacao_saude", texto: "• REALIZA GRUPOS DE EDUCAÇÃO ALIMENTAR E NUTRICIONAL?"},
+        {id: "atividade_fisica_planos_terapeuticos_promacao_saude", texto: "• A ATIVIDADE FÍSICA COMPOÊ A MAIORIA DOS PLANOS TERAPÊUTICOS?"},
+        {id: "utilizacao_ofertas_territorio_promacao_saude", texto: "• HÁ UTILIZAÇÃO DAS OFERTAS DO TERRITÓRIO NA COMPOSIÇÃO DOS PLANOS TERAPÊUTICOS?"},
+        {id: "participacao_foruns_intersetoriais_promacao_saude", texto: "• OS PROFISSIONAIS PARTICIPAM DE FÓRUNS E REUNIÕES COM OUTRAS SECRETARIAS NO TERRITÓRIO?"}
+    ]
+},
+{
+    secaoId: "checklist-seção13",
+    categoria: "13.10 Saúde da Mulher",
+    itens: [
+        {id: "teste_gravidez_oferta_testes_saude_mulher", texto: "• APÓS O TESTE DE GRAVIDEZ, MESMO QUE O RESULTADO SEJA NEGATIVO HÁ OFERTA DOS TESTES RÁPIDOS?"},
+        {id: "participacao_foruns_maternidade_saude_mulher", texto: "• PARTICIPA DOS FÓRUNS DE MATERNIDADE DE SUA REFERÊNCIA?"},
+        {id: "aprazamento_papanicolaou_mamografia_saude_mulher", texto: "• REALIZA APRAZAMENTO PARA REALIZAÇÃO DO PAPANICOLAOU E DE MAMOGRAFIA?"},
+        {id: "busca_ativa_gestantes_faltosas_saude_mulher", texto: "• REALIZA BUSCA ATIVA DE GESTANTES FALTOSAS?"},
+        {id: "monitora_fila_diu_consultas_saude_mulher", texto: "• MONITORA FILA DE ESPERA DE DIU, CONSULTAS PARA O GINECOLOGISTA, MASTOLOGISTA E PRÉ NATAL DE ALTO RISCO?"},
+        {id: "controle_exames_alterados_saude_mulher", texto: "• HÁ EVIDÊNCIAS DE CONTROLE E MONITORAMENTO DE PAPANICOLAOU E MAMOGRAFIAS ALTERADOS?"},
+        {id: "treinamento_coleta_papanicolaou_saude_mulher", texto: "• MONITORA TREINAMENTO DA EQUIPE PARA COLETA DE PAPANICOLAOU? (CURSO FOSP)"}
+    ]
+},
+{
+    secaoId: "checklist-seção13",
+    categoria: "13.11 Saúde do Idoso",
+    itens: [
+        {id: "matriciamento_ursi_saude_idoso", texto: "• O MATRICIAMENTO COM A URSI DE REFERÊNCIA ESTÁ SENDO REALIZADO?"},
+        {id: "discussao_casos_rede_intersetorial_saude_idoso", texto: "• HÁ DISCUSSÃO DE CASOS COM OUTROS SERVIÇOS DA REDE (CREAS, CAPS, CER, etc)?"},
+        {id: "ampi_ab_idosos_cadastrados_saude_idoso", texto: "• A AMPI-AB É REALIZADA EM TODOS OS IDOSOS CADASTRADOS NA UNIDADE?"},
+        {id: "busca_ativa_idosos_territorio_saude_idoso", texto: "• HÁ BUSCA ATIVA PELOS IDOSOS DO TERITÓRIO?"},
+        {id: "atendimento_raspi_ampiab_saude_idoso", texto: "• O ATENDIMENTO AO IDOSO É REALIZADO DE ACORDO COM OS FLUXOS DA RASPI SEGUINDO AS DIRETRIZES E ENCAMINHAMENTOS PELA AMPI-AB?"}
+    ]
+},
+{
+    secaoId: "checklist-seção13",
+    categoria: "13.12 Saúde da Criança",
+    itens: [
+        {id: "consulta_rn_puericultura_saude_crianca", texto: "• HÁ CONSULTA DISPONÍVEL PARA RN E SEGUIMENTO EM PUERICULTURA?"},
+        {id: "monitoramento_rn_risco_ras_saude_crianca", texto: "• HÁ MONITORAMENTO DOS RN DE RISCO JUNTO AOS DEMAIS PONTOS DE ATENÇÃO DAS RAS?"},
+        {id: "educacao_aleitamento_materno_saude_crianca", texto: "• HÁ ATIVIDADE EDUCATIVA PERMANENTE SOBRE O ALEITAMENTO MATERNO?"},
+        {id: "acoes_pse_eixos_saude_crianca", texto: "• A UNIDADE DESENVOLVE AÇÕES DO PSE EM TODOS OS SEUS EIXOS?"}
+    ]
+},
+{
+    secaoId: "checklist-seção14",
+    categoria: "14 Sistemas de Informação, LGPD, Outros",
+    itens: [
+        {id: "unidade_utiliza_email_institucional_LGPD", texto: "A UNIDADE UTILIZA APENAS O E-MAIL INSTITUCIONAL?"},
+        {id: "controle_acesso_sitemas_LGPD", texto: "HÁ CONTROLE DE SOLICITAÇÃO E EXCLUSÃO DE ACESSO AOS SISTEMAS INFORMATIZADOS?"},
+        {id: "unidade_dados_sensiveis_ferramentas_nao_oficiais" , texto: "A UNIDADE NÃO COMPARTILHA DADOS PESSOAIS E INFORMAÇÕES SENSÍVEIS POR FERRAMENTAS NÃO OFICIAIS COMO WHATSAPP, GOOGLE E OUTROS?"}
+    ]
+}
 
-    
 ];
 
 
