@@ -7,7 +7,7 @@ const exportButton = document.getElementById("exportar");
 const perguntas = [
     {
         secaoId: "checklist-seção1",
-        categoria: "1.1 Estrutura e Organização",
+        categoria: "1.1 Identificação da Unidade",
         itens: [
             { id: "placa_unidade", texto: "• A PLACA DA UNIDADE ESTÁ EM BOM ESTADO DE CONSERVAÇÃO E ATUALIZADA DE ACORDO COM O MANUAL DE IDENTIDADE VISUAL DE ASCOM?" },
             { id: "identificacao_salas", texto: "• HÁ IDENTIFICAÇÃO E NUMERAÇÃO DAS SALAS E CONSULTÓRIOS DE ACORDO COM O MANUAL DE IDENTIDADE VISUAL DE ASCOM?" },
@@ -809,47 +809,98 @@ document.addEventListener("DOMContentLoaded", gerarChecklist);
 
 // Salvar e gerar relatório
 // Mantenha APENAS este bloco:
-form.addEventListener("submit", event => {
-    event.preventDefault();
+exportButton.addEventListener("click", () => {
+    const doc = new jspdf.jsPDF();
     
-    let relatorio = "Relatório de Visita:\n";
+    // Configurações iniciais
+    const margin = 15;
+    let yPos = 20;
+    const pageWidth = doc.internal.pageSize.getWidth();
+    
+    // Estilo do título
+    doc.setFontSize(20);
+    doc.setTextColor(33, 150, 243); // Azul
+    doc.text("Relatório de Visita Técnica", pageWidth/2, yPos, { align: 'center' });
+    yPos += 15;
+
+    // Conteúdo do relatório
+    doc.setFontSize(12);
+    doc.setTextColor(0, 0, 0); // Preto
     
     perguntas.forEach(secao => {
-        relatorio += `\n=== ${secao.categoria} ===\n`;
-        
+        // Cabeçalho da seção
+        doc.setFillColor(245, 245, 245); // Cinza claro
+        doc.rect(margin, yPos - 5, pageWidth - 2*margin, 10, 'F');
+        doc.setFont(undefined, 'bold');
+        doc.text(`Seção: ${secao.categoria}`, margin + 5, yPos);
+        yPos += 15;
+
+        // Itens da seção
+        doc.setFont(undefined, 'normal');
         secao.itens.forEach(pergunta => {
             const statusElement = document.querySelector(`[name='${pergunta.id}']`);
             const justificativaElement = document.querySelector(`[name='justificativa_${pergunta.id}']`);
             
             if (statusElement) {
-                const status = statusElement.value;
-                relatorio += `${pergunta.texto}: ${status.toUpperCase()}\n`;
+                // Formatação do texto
+                const status = statusElement.value.toUpperCase();
+                const texto = `${pergunta.texto}: ${status}`;
                 
+                // Quebra de linha automática
+                const splitText = doc.splitTextToSize(texto, pageWidth - 2*margin - 30);
+                
+                splitText.forEach((line, index) => {
+                    if (yPos > doc.internal.pageSize.getHeight() - 20) {
+                        doc.addPage();
+                        yPos = 20;
+                    }
+                    
+                    doc.text(line, margin + 15, yPos);
+                    yPos += index === splitText.length - 1 ? 10 : 7;
+                });
+
+                // Justificativa
                 if (justificativaElement?.value.trim()) {
-                    relatorio += `Justificativa: ${justificativaElement.value.trim()}\n`;
+                    const justificativa = `Justificativa: ${justificativaElement.value.trim()}`;
+                    const splitJust = doc.splitTextToSize(justificativa, pageWidth - 2*margin - 30);
+                    
+                    splitJust.forEach(line => {
+                        if (yPos > doc.internal.pageSize.getHeight() - 20) {
+                            doc.addPage();
+                            yPos = 20;
+                        }
+                        
+                        doc.setTextColor(100, 100, 100); // Cinza
+                        doc.text(line, margin + 20, yPos);
+                        yPos += 7;
+                    });
+                    doc.setTextColor(0, 0, 0); // Volta para preto
                 }
             }
+            yPos += 5;
         });
+        yPos += 10;
     });
-    
+
+    // Observações
     const observacao = document.getElementById("observacao").value.trim();
     if (observacao) {
-        relatorio += `\nObservações:\n${observacao}\n`;
+        doc.setFont(undefined, 'bold');
+        doc.text("Observações:", margin, yPos);
+        yPos += 10;
+        doc.setFont(undefined, 'normal');
+        const splitObs = doc.splitTextToSize(observacao, pageWidth - 2*margin);
+        splitObs.forEach(line => {
+            doc.text(line, margin, yPos);
+            yPos += 7;
+        });
     }
-    
-    relatorioElement.textContent = relatorio;
+
+    // Rodapé
+    doc.setFontSize(10);
+    doc.setTextColor(150, 150, 150);
+    doc.text(`Gerado em: ${new Date().toLocaleDateString()}`, margin, doc.internal.pageSize.getHeight() - 10);
+
+    // Salvar PDF
+    doc.save('relatorio_visita.pdf');
 });
-// Exportar relatório como arquivo de texto
-exportButton.addEventListener("click", () => {
-    const blob = new Blob([relatorioElement.textContent], { type: "text/plain" });
-    const a = document.createElement("a");
-    a.href = URL.createObjectURL(blob);
-    a.download = "relatorio_visita.txt";
-    a.click();
-});
-    const observacao = document.getElementById("observacao").value.trim();
-    if (observacao) {
-        relatorio += `\nObservações:\n${observacao}\n`;
-    }
-    
-    relatorioElement.textContent = relatorio;
