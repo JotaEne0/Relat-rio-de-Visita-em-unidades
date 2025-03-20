@@ -807,8 +807,6 @@ function toggleCollapse(sectionId) {
 // Chamar a função ao carregar a página
 document.addEventListener("DOMContentLoaded", gerarChecklist);
 
-// Salvar e gerar relatório
-// Mantenha APENAS este bloco:
 form.addEventListener("submit", event => {
     event.preventDefault();
     
