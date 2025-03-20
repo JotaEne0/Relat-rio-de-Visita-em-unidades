@@ -57,7 +57,7 @@ legend {
 }
 button {
     background-color: #4CAF50;
-    color: rgb(5, 5, 5);
+    color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -73,27 +73,4 @@ button:hover {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     white-space: pre-wrap;
-}
-.section-wrapper {
-    position: relative;
-    margin: 15px 0;
-}
-
-.collapse-button {
-    cursor: pointer;
-    padding: 10px;
-    background-color: #f1f1f1;
-    border: none;
-    width: 100%;
-    margin: 5px 0;
-}
-
-.collapse-button.top {
-    margin-bottom: 10px;
-}
-
-.collapse-button.bottom {
-    display: none;
-    margin-top: 10px;
-    background-color: #e0e0e0;
 }
