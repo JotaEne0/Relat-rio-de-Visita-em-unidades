@@ -168,3 +168,21 @@ button:hover {
         padding: 10px 15px;
     }
 }
+.modo-relatorio {
+    margin: 20px 0;
+    text-align: right;
+}
+
+#toggleModo {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff4444;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#toggleModo.ativo {
+    background-color: #00C851;
+}

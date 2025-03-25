@@ -807,29 +807,65 @@ function toggleCollapse(sectionId) {
 // Chamar a função ao carregar a página
 document.addEventListener("DOMContentLoaded", gerarChecklist);
 
+let relatorioCompleto = false; // Começa no modo filtrado
+
+// Botão de toggle
+document.getElementById("toggleModo").addEventListener("click", (e) => {
+    relatorioCompleto = !relatorioCompleto;
+    const botao = e.target;
+    botao.textContent = `Preenchimento Automático: ${relatorioCompleto ? "Ligado" : "Desligado"}`;
+    botao.classList.toggle("ativo", relatorioCompleto);
+});
+
+// Evento de submit modificado
 form.addEventListener("submit", event => {
     event.preventDefault();
     
     let relatorio = "Relatório de Visita:\n";
-    
+    const secoes = {};
+
+    // Processar todas as perguntas
     perguntas.forEach(secao => {
-        relatorio += `\n=== ${secao.categoria} ===\n`;
+        if (!secoes[secao.secaoId]) {
+            secoes[secao.secaoId] = {
+                categoria: secao.categoria,
+                itens: []
+            };
+        }
         
         secao.itens.forEach(pergunta => {
-            const statusElement = document.querySelector(`[name='${pergunta.id}']`);
+            const statusElement = document.getElementById(pergunta.id);
             const justificativaElement = document.querySelector(`[name='justificativa_${pergunta.id}']`);
             
-            if (statusElement) {
-                const status = statusElement.value;
-                relatorio += `${pergunta.texto}: ${status.toUpperCase()}\n`;
-                
-                if (justificativaElement?.value.trim()) {
-                    relatorio += `Justificativa: ${justificativaElement.value.trim()}\n`;
-                }
+            // Verificar se deve incluir no relatório
+            const incluir = relatorioCompleto || 
+                          (statusElement.value !== "atendido" || 
+                          (justificativaElement?.value.trim()));
+
+            if (incluir) {
+                secoes[secao.secaoId].itens.push({
+                    texto: pergunta.texto,
+                    status: statusElement.value,
+                    justificativa: justificativaElement?.value.trim() || ""
+                });
             }
         });
     });
-    
+
+    // Montar relatório
+    Object.values(secoes).forEach(secao => {
+        if (secao.itens.length > 0) {
+            relatorio += `\n=== ${secao.categoria} ===\n`;
+            secao.itens.forEach(item => {
+                relatorio += `${item.texto}: ${item.status.toUpperCase()}\n`;
+                if (item.justificativa) {
+                    relatorio += `Justificativa: ${item.justificativa}\n`;
+                }
+            });
+        }
+    });
+
+    // Adicionar observações
     const observacao = document.getElementById("observacao").value.trim();
     if (observacao) {
         relatorio += `\nObservações:\n${observacao}\n`;
@@ -837,17 +873,3 @@ form.addEventListener("submit", event => {
     
     relatorioElement.textContent = relatorio;
 });
-// Exportar relatório como arquivo de texto
-exportButton.addEventListener("click", () => {
-    const blob = new Blob([relatorioElement.textContent], { type: "text/plain" });
-    const a = document.createElement("a");
-    a.href = URL.createObjectURL(blob);
-    a.download = "relatorio_visita.txt";
-    a.click();
-});
-    const observacao = document.getElementById("observacao").value.trim();
-    if (observacao) {
-        relatorio += `\nObservações:\n${observacao}\n`;
-    }
-    
-    relatorioElement.textContent = relatorio;
