@@ -775,6 +775,9 @@ function gerarChecklist() {
                 <option value="nao_atendido">Não Atendido</option>
                 <option value="nao_se_aplica">Não se Aplica</option>
             `;
+        
+            // ▼▼▼ ADICIONE ESTA LINHA ▼▼▼
+            select.dataset.initialValue = "atendido"; // Registrar valor inicial
 
             const textarea = document.createElement("textarea");
             textarea.classList.add("justificativa");
@@ -816,6 +819,12 @@ document.getElementById("toggleModo").addEventListener("click", (e) => {
     botao.textContent = `Preenchimento Automático: ${relatorioCompleto ? "Ligado" : "Desligado"}`;
     botao.classList.toggle("ativo", relatorioCompleto);
 });
+// Rastrear alterações nas perguntas
+document.addEventListener("change", (e) => {
+    if (e.target.classList.contains("status")) {
+        e.target.dataset.modified = "true";
+    }
+});
 
 // Evento de submit modificado
 form.addEventListener("submit", event => {
@@ -838,9 +847,9 @@ form.addEventListener("submit", event => {
             const justificativaElement = document.querySelector(`[name='justificativa_${pergunta.id}']`);
             
             // Verificar se deve incluir no relatório
-            const incluir = relatorioCompleto || 
-                          (statusElement.value !== "atendido" || 
-                          (justificativaElement?.value.trim()));
+            const incluir = relatorioCompleto 
+            ? true 
+            : (statusElement.dataset.modified === "true" || justificativaElement?.value.trim());
 
             if (incluir) {
                 secoes[secao.secaoId].itens.push({
