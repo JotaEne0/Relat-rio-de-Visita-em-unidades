@@ -882,3 +882,19 @@ form.addEventListener("submit", event => {
     
     relatorioElement.textContent = relatorio;
 });
+// Exportar relatório como .txt
+exportButton.addEventListener("click", () => {
+    const conteudo = relatorioElement.textContent;
+    if (!conteudo) {
+        alert("Gere o relatório antes de exportar!");
+        return;
+    }
+    
+    const blob = new Blob([conteudo], { type: "text/plain" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "relatorio_visita.txt";
+    a.click();
+    URL.revokeObjectURL(url);
+});
