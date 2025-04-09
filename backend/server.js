@@ -2,10 +2,12 @@ const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const bcrypt = require('bcryptjs');
-const authRoutes = require('./routes/auth');
 const db = require('./db');
-
+require('dotenv').config();
 dotenv.config();
+
+const authRoutes = require('./routes/auth');
+const relatorioRoutes = require('./routes/relatorio');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -26,3 +28,9 @@ app.use('/auth', authRoutes);
 app.listen(PORT, () => {
   console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
+
+// Rotas
+
+
+app.use('/api', authRoutes);
+app.use('/api', relatorioRoutes);
