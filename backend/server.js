@@ -21,9 +21,6 @@ app.get('/', (req, res) => {
   res.send('Servidor rodando com sucesso!');
 });
 
-// Rotas de autenticação
-app.use('/auth', authRoutes);
-
 // Inicia o servidor
 app.listen(PORT, () => {
   console.log(`Servidor rodando em http://localhost:${PORT}`);

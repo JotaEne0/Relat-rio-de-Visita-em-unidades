@@ -21,6 +21,7 @@ router.post('/login', (req, res) => {
     }
 
     const usuario = resultados[0];
+    console.log('Usuário encontrado:', usuario); 
 
     bcrypt.compare(senha, usuario.senha, (err, isMatch) => {
       if (err) throw err;
