@@ -898,3 +898,71 @@ exportButton.addEventListener("click", () => {
     a.click();
     URL.revokeObjectURL(url);
 });
+const relatorio = {
+    data_visita: '2025-04-10',
+    respostas: {
+      "placa_unidade": "Atendido",
+      "identificacao_salas": "Parcialmente Atendido",
+      "justificativas": {
+        "identificacao_salas": "Faltou uma sala"
+      }
+    },
+    observacoes: "Unidade geral OK"
+  };
+  
+  function enviarRelatorioParaBackend() {
+    const respostas = {};
+    const justificativas = {};
+    const data_visita = new Date().toISOString().split('T')[0]; // data de hoje
+    const observacoes = document.getElementById("observacao").value.trim();
+  
+    perguntas.forEach(secao => {
+      secao.itens.forEach(pergunta => {
+        const statusElement = document.getElementById(pergunta.id);
+        const justificativaElement = document.querySelector(`[name='justificativa_${pergunta.id}']`);
+  
+        if (statusElement && statusElement.value) {
+          respostas[pergunta.id] = statusElement.value;
+  
+          if (
+            statusElement.value === "parcialmente_atendido" ||
+            statusElement.value === "nao_atendido"
+          ) {
+            if (justificativaElement && justificativaElement.value.trim()) {
+              justificativas[pergunta.id] = justificativaElement.value.trim();
+            }
+          }
+        }
+      });
+    });
+  
+    const relatorio = {
+      data_visita,
+      observacoes,
+      respostas,
+      justificativas
+    };
+  
+    console.log(relatorio); 
+    fetch('http://localhost:3000/api/relatorio', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + localStorage.getItem('token')
+      },
+      body: JSON.stringify(relatorio)
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.mensagem) {
+          alert(data.mensagem);
+        } else {
+          alert('Erro ao salvar relatório.');
+        }
+      })
+      .catch(err => {
+        console.error(err);
+        alert('Erro na comunicação com o servidor.');
+      });
+  }
+  

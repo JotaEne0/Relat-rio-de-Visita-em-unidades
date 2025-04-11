@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Relatórios de Visita</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      max-width: 400px;
+      margin: auto;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 12px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #0077ff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #005fcc;
+    }
+  </style>
+</head>
+<body>
+  <h2>Login</h2>
+  <input type="email" id="email" placeholder="Seu email" />
+  <input type="password" id="senha" placeholder="Sua senha" />
+  <button onclick="fazerLogin()">Entrar</button>
+
+  <script>
+    async function fazerLogin() {
+      const email = document.getElementById('email').value;
+      const senha = document.getElementById('senha').value;
+
+      if (!email || !senha) {
+        alert('Preencha todos os campos');
+        return;
+      }
+
+      try {
+        const response = await fetch('http://localhost:3000/api/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ email, senha })
+        });
+
+        const data = await response.json();
+
+        if (data.token) {
+          localStorage.setItem('token', data.token);
+          alert('Login bem-sucedido!');
+          window.location.href = 'relatorio.html'; // redireciona para o painel
+        } else {
+          alert(data.mensagem || 'Erro no login');
+        }
+      } catch (err) {
+        alert('Erro na conexão com o servidor');
+        console.error(err);
+      }
+    }
+  </script>
+</body>
+</html>
