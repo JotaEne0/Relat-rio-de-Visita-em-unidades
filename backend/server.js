@@ -1,10 +1,8 @@
 const express = require('express');
 const cors = require('cors');
-const dotenv = require('dotenv');
 const bcrypt = require('bcryptjs');
 const db = require('./db');
 require('dotenv').config();
-dotenv.config();
 
 const authRoutes = require('./routes/auth');
 const relatorioRoutes = require('./routes/relatorio');
@@ -31,3 +29,7 @@ app.listen(PORT, () => {
 
 app.use('/api', authRoutes);
 app.use('/api', relatorioRoutes);
+
+
+const path = require('path');
+app.use(express.static(path.join(__dirname, '../Frontend')));
