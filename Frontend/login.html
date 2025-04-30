@@ -1,73 +1,167 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login - Relatórios de Visita</title>
+  <meta charset="UTF-8">
+  <title>Login - Relatórios</title>
   <style>
     body {
+      margin: 0;
+      padding: 0;
+      background: #dbe6ec;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-family: Arial, sans-serif;
-      padding: 2rem;
-      max-width: 400px;
-      margin: auto;
     }
-    input {
-      width: 100%;
-      padding: 8px;
-      margin-bottom: 12px;
+    .login-container {
+      background: #fff;
+      border-radius: 10px;
+      width: 400px;
+      box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
+      overflow: hidden;
     }
-    button {
+    .login-header {
+      background: #0077cc;
+      padding: 20px;
+      text-align: center;
+    }
+    .login-header img {
+      width: 140px;
+      margin-top: 10px;
+    }
+    .login-body {
+      padding: 30px 20px;
+      text-align: center;
+    }
+    .login-body img.logo-cidade {
+      width: 90px;
+      margin-bottom: 10px;
+    }
+    .login-body h2 {
+      font-size: 18px;
+      margin: 10px 0;
+      color: #333;
+    }
+    .input-group {
+      position: relative;
+      margin-bottom: 15px;
+    }
+    .input-group input {
       width: 100%;
-      padding: 10px;
-      background: #0077ff;
+      padding: 12px 40px 12px 12px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    .input-group::before {
+      content: '';
+      background: url('https://cdn-icons-png.flaticon.com/512/1077/1077114.png') no-repeat center;
+      background-size: 20px;
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0.6;
+    }
+    .input-group.senha::before {
+      background-image: url('https://cdn-icons-png.flaticon.com/512/3064/3064155.png');
+    }
+    .checkbox-group {
+      text-align: left;
+      margin-bottom: 20px;
+    }
+    .checkbox-group label {
+      font-size: 14px;
+      color: #555;
+    }
+    .login-body button {
+      width: 100%;
+      padding: 12px;
+      background: #0077cc;
       color: white;
+      font-size: 16px;
       border: none;
+      border-radius: 5px;
       cursor: pointer;
+      margin-bottom: 10px;
     }
-    button:hover {
-      background: #005fcc;
+    .login-body button:hover {
+      background: #005fa3;
+    }
+    .login-footer {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 20px 20px 20px;
+      font-size: 13px;
+    }
+    .login-footer a {
+      text-decoration: none;
+      color: #0077cc;
     }
   </style>
 </head>
 <body>
-  <h2>Login</h2>
-  <input type="email" id="email" placeholder="Seu email" />
-  <input type="password" id="senha" placeholder="Sua senha" />
-  <button onclick="fazerLogin()">Entrar</button>
 
-  <script>
-    async function fazerLogin() {
-      const email = document.getElementById('email').value;
-      const senha = document.getElementById('senha').value;
+<div class="login-container">
+  <div class="login-header">
+    <h2>SUPERVISÃO DE ITAQUERA</h2>
+  </div>
+  
+  <div class="login-body">
+    <img src="images/logo_big.png" alt="Cidade SP" class="logo-cidade">
+    <h2>CIDADE DE SÃO PAULO<br>SAÚDE</h2>
+    
+    <div class="input-group">
+      <input type="email" id="email" placeholder="E-mail">
+    </div>
+    
+    <div class="input-group senha">
+      <input type="password" id="senha" placeholder="Senha">
+    </div>
 
-      if (!email || !senha) {
-        alert('Preencha todos os campos');
-        return;
-      }
+    <div class="checkbox-group">
+      <label><input type="checkbox" id="lembrar"> Lembrar me</label>
+    </div>
 
-      try {
-        const response = await fetch('http://localhost:3000/api/login', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ email, senha })
-        });
+    <button onclick="fazerLogin()">Entrar</button>
+  </div>
 
-        const data = await response.json();
+  <div class="login-footer">
+    <a href="#">Esqueceu sua senha?</a>
+  </div>
+</div>
 
-        if (data.token) {
-          localStorage.setItem('token', data.token);
-          alert('Login bem-sucedido!');
-          window.location.href = 'relatorio.html'; // redireciona para o painel
-        } else {
-          alert(data.mensagem || 'Erro no login');
-        }
-      } catch (err) {
-        alert('Erro na conexão com o servidor');
-        console.error(err);
-      }
+<script>
+  async function fazerLogin() {
+    const email = document.getElementById('email').value;
+    const senha = document.getElementById('senha').value;
+    if (!email || !senha) {
+      alert('Preencha todos os campos');
+      return;
     }
-  </script>
+    try {
+      const response = await fetch('http://localhost:3000/api/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, senha })
+      });
+      const data = await response.json();
+      if (data.token) {
+        localStorage.setItem('token', data.token);
+        alert('Login bem-sucedido!');
+        window.location.href = 'index.html';
+      } else {
+        alert(data.mensagem || 'Erro no login');
+      }
+    } catch (err) {
+      alert('Erro na conexão com o servidor');
+      console.error(err);
+    }
+  }
+</script>
+
 </body>
 </html>

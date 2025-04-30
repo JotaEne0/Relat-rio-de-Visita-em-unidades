@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Relatório de Visitas</title>
+    <title>Relatório de Visita STS Itaquera</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="manifest" href="manifest.json">
-    <link rel="icon" type="image/png" href="images/logo-40x40.png">
+    <link rel="icon" type="image/png" href="images/logo-512x512tr01.png">
     <style>
         .collapse-content {
             display: none;
@@ -26,10 +26,23 @@
 </head>
 <body>
     <header>
-        <img src="images/logo.png" alt="Logo da PWA" class="logo">
-        <h1>Relatório de Visitas</h1>
+        <img src="images/logo_big.png" alt="Logo da PWA" class="logo">
+        <h1>Supervisão Técnica de Itaquera</h1>
         <p>Preencha os dados abaixo para registrar sua visita.</p>
     </header>
+    <nav style="margin-bottom: 1.5rem;">
+        <button onclick="window.location.href='index.html'">Novo Relatório</button>
+        <button onclick="window.location.href='historico.html'">Histórico</button>
+        <button onclick="logout()">Sair</button>
+      </nav>
+      
+      <script>
+      function logout() {
+        localStorage.removeItem("token");
+        window.location.href = "login.html";
+      }
+      </script>
+      
     <main>
         <div class="modo-relatorio">
             <button id="toggleModo">Preenchimento Automático: Desligado</button>
@@ -152,5 +165,13 @@
 
     
 </body>
+<script>
+    const token = localStorage.getItem("token");
+    if (!token) {
+      alert("Você precisa estar logado.");
+      window.location.href = "login.html";
+    }
+  </script>
+  
 </html>
 

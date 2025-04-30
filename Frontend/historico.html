@@ -66,19 +66,19 @@
         window.location.href = 'login.html';
         return;
       }
-
+  
       try {
         const res = await fetch('http://localhost:3000/api/relatorios', {
           headers: {
             'Authorization': 'Bearer ' + token
           }
         });
-
+  
         const data = await res.json();
-
+  
         const tbody = document.querySelector('#tabela-relatorios tbody');
         tbody.innerHTML = '';
-
+  
         data.relatorios.forEach(rel => {
           const tr = document.createElement('tr');
           tr.innerHTML = `
@@ -86,15 +86,14 @@
             <td>${rel.data_visita}</td>
             <td>${new Date(rel.data_criacao).toLocaleString()}</td>
             <td>
-  ${rel.conteudo
-    ? `
-      <button onclick='verDetalhes(${JSON.stringify(rel.conteudo, null, 2)})'>Ver</button>
-      <button onclick='baixarRelatorio(${JSON.stringify(rel.conteudo, null, 2)})'>Baixar</button>
-    `
-    : '<span style="color: red;">Inválido</span>'
-  }
-</td>
-
+              ${rel.conteudo
+                ? `
+                  <button onclick='verDetalhes(${JSON.stringify(rel.conteudo)})'>Ver</button>
+                  <button onclick='baixarRelatorio(${JSON.stringify(rel.conteudo)})'>Baixar</button>
+                `
+                : '<span style="color: red;">Inválido</span>'
+              }
+            </td>
           `;
           tbody.appendChild(tr);
         });
@@ -103,13 +102,58 @@
         alert('Erro ao carregar relatórios.');
       }
     }
-
+  
+    // 🔧 NOVO: Deixa o texto da pergunta legível
+    function formatarPergunta(id) {
+      return id
+        .replace(/_/g, " ")
+        .replace(/\b\w/g, c => c.toUpperCase());
+    }
+  
+    // 🔧 NOVO: Relatório formatado como no formulário
+    function gerarTextoPlano(relatorio) {
+      let texto = `📋 Relatório de Visita\n`;
+      texto += `Data da Visita: ${relatorio.data_visita}\n\n`;
+  
+      if (relatorio.respostas) {
+        texto += "=== Respostas ===\n";
+  
+        for (const [perguntaId, resposta] of Object.entries(relatorio.respostas)) {
+          texto += `• ${formatarPergunta(perguntaId)}: ${resposta.toUpperCase()}\n`;
+  
+          const justificativa = relatorio.justificativas?.[perguntaId];
+          if (justificativa && justificativa.trim() !== "") {
+            texto += `  Justificativa: ${justificativa}\n`;
+          }
+        }
+      }
+  
+      if (relatorio.observacoes?.trim()) {
+        texto += `\n=== Observações ===\n${relatorio.observacoes}\n`;
+      }
+  
+      return texto;
+    }
+  
     function verDetalhes(relatorio) {
       const detalhesDiv = document.getElementById('detalhes');
-      detalhesDiv.innerHTML = `<h3>Detalhes do Relatório</h3><pre>${JSON.stringify(relatorio, null, 2)}</pre>`;
+      const texto = gerarTextoPlano(relatorio);
+      detalhesDiv.innerHTML = `<h3>Detalhes do Relatório</h3><pre>${texto}</pre>`;
     }
-
+  
+    function baixarRelatorio(relatorio) {
+      const texto = gerarTextoPlano(relatorio);
+      const blob = new Blob([texto], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `relatorio_${relatorio.data_visita || 'sem_data'}.txt`;
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+  
     document.addEventListener('DOMContentLoaded', carregarRelatorios);
   </script>
+  
 </body>
 </html>
